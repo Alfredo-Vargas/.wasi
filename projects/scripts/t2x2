@@ -1,0 +1,8 @@
+#!/bin/sh
+tmux new -s term2x2 -d
+tmux split-window
+tmux split-window
+tmux split-window
+tmux select-layout tiled
+tmux select-pane -t 1
+tmux attach-session -t term2x2

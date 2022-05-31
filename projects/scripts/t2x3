@@ -1,0 +1,24 @@
+#!/bin/sh
+tmux new -s term2x3 -d
+tmux split-window
+tmux split-window
+tmux split-window
+tmux split-window
+tmux split-window
+tmux select-layout tiled
+tmux select-pane -t 1
+tmux attach -t term2x3
+
+
+# tmux new -s term2x3 -d
+# tmux split-window -h 
+# tmux split-window -h 
+# tmux select-layout even-horizontal
+# tmux select-pane -t 0
+# tmux split-window
+# tmux select-pane -t 2
+# tmux split-window
+# tmux select-pane -t 4
+# tmux split-window
+# tmux select-pane -t 0
+# tmux attach-session -t term2x3

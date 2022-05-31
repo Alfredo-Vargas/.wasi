@@ -1,0 +1,12 @@
+#!/bin/sh
+tmux new -s term3x2 -d
+tmux split-window
+tmux split-window
+tmux select-layout even-vertical
+tmux split-window -h 
+tmux select-pane -t 2
+tmux split-window -h 
+tmux select-pane -t 1
+tmux split-window -h 
+tmux select-pane -t 1
+tmux attach-session -t term3x2

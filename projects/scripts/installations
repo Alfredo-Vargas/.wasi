@@ -1,0 +1,15 @@
+# IDEs Terminal applications
+pacman -S alacritty tmux vim neovim emacs
+
+# Markdown applications
+pacman -S pandoc texlive-most
+
+# Personal applications (password manager, internet explorer, time binary, clipboard binaries)
+pacman -S keepassxc time firefox time xclip xsel
+
+# For FrontEnd and BackEnd development
+pacman -S php php-cgi php-gd php-pgsql php-apache mariadb libmariadbclient mariadb-clients yay 
+
+# To handle ntfs system file format in linux
+pacman -S ntfs-3g
+
