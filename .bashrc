@@ -6,7 +6,6 @@ export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 # To open Android studio in DWM
 export _JAVA_AWT_WM_NONREPARENTING=1
-
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon
 #delete the hashtags of the next lines and restart
@@ -62,6 +61,8 @@ alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+#ip
+alias ip='ip --color=auto'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -364,16 +365,17 @@ alias personal='cp -Rf /personal/* ~'
 # cpufetch
 # colorscript random
 
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/.config/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/alfredo/.config/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/.config/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/.config/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/alfredo/.config/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/alfredo/.config/miniconda/etc/profile.d/conda.sh"
     else
-        export PATH="/home/pacha/.config/miniconda3/bin:$PATH"
+        export PATH="/home/alfredo/.config/miniconda/bin:$PATH"
     fi
 fi
 unset __conda_setup
