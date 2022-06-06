@@ -56,14 +56,13 @@ bind "set completion-ignore-case on"
 ### ALIASES ###
 
 alias fd='fd -H'
-alias t6='~/projects/scripts/t2x3'
-alias t4='~/projects/scripts/t2x2'
-alias t2='~/projects/scripts/t1x2'
-alias t32='~/projects/scripts/t3x2'
-alias myide='~/projects/scripts/ide'
-alias wiki='nvim ~/projects/wiki'
-alias tm='cd ~/.tm'
-alias expresspush='sh ~/projects/scripts/git_update.sh'
+alias t6='/home/alfredo/projects/scripts/t2x3'
+alias t4='/home/alfredo/projects/scripts/t2x2'
+alias t2='/home/alfredo/projects/scripts/t1x2'
+alias t32='/home/alfredo/projects/scripts/t3x2'
+alias myide='/home/alfredo/projects/scripts/ide'
+alias wiki='nvim /home/alfredo/projects/wiki'
+alias expresspush='sh /home/alfredo/projects/scripts/git_update.sh'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
@@ -381,20 +380,3 @@ alias personal='cp -Rf /personal/* ~'
 # sysinfo-retro
 # cpufetch
 # colorscript random
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alfredo/.config/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alfredo/.config/miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/alfredo/.config/miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alfredo/.config/miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

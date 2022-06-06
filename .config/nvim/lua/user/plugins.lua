@@ -62,6 +62,10 @@ return packer.startup(function(use)
     "SmiteshP/nvim-gps",
     requires = "nvim-treesitter/nvim-treesitter"
   }
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
   use "mfussenegger/nvim-dap" -- For debuggin using DAP (Debug Adapter Protocol)
   -- use "mfussenegger/nvim-dap-python" -- Extension for nvim-dap providing default configurations for python
 
