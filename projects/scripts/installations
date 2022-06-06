@@ -1,6 +1,8 @@
-# IDEs Terminal applications
-pacman -S alacritty tmux vim neovim emacs
+# Applications in KDE Plasma Xorg
+pacman -S git base-devel alacritty tmux vim neovim ttf-nerd-fonts-symbols flameshot keepassxc
 
+
+# Extra Applications in KDE Plasma Xorg
 # Markdown applications
 pacman -S pandoc texlive-most
 
