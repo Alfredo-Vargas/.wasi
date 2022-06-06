@@ -3,9 +3,26 @@
 export EDITOR='vim'
 export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
-export PAGER='most'
+export PAGER='less'  # used for man pages!
 # To open Android studio in DWM
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Make less output colorfull (usefull for man pages)
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# Start bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# Start stand out
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# End standout
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# Start underline
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# End Underline
+export LESS_TERMCAP_ue=$(tput sgr0)
+# End bold, blinking, standout, underline
+export LESS_TERMCAP_me=$(tput sgr0)
+
+
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon
 #delete the hashtags of the next lines and restart
