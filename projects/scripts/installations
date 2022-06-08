@@ -1,13 +1,11 @@
 # Applications in KDE Plasma Xorg
-pacman -S git base-devel alacritty tmux vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow
 
+# Applications in KDE Plasma Wayland
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols keepassxc okular firefox time stow
 
-# Extra Applications in KDE Plasma Xorg
 # Markdown applications
 pacman -S pandoc texlive-most
-
-# Personal applications (password manager, internet explorer, time binary, clipboard binaries)
-pacman -S keepassxc time firefox time xclip xsel
 
 # For FrontEnd and BackEnd development
 pacman -S php php-cgi php-gd php-pgsql php-apache mariadb libmariadbclient mariadb-clients yay 
