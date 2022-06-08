@@ -1,5 +1,5 @@
 # Applications in KDE Plasma Xorg
-pacman -S git base-devel alacritty tmux vim neovim ttf-nerd-fonts-symbols flameshot keepassxc
+pacman -S git base-devel alacritty tmux vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular
 
 
 # Extra Applications in KDE Plasma Xorg
