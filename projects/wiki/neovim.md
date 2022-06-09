@@ -1,3 +1,9 @@
+# If Tree-sitter is not parsing, try
+```console
+TSInstall <language_name>
+```
+As language names you can have: `lua`, `bash`, ...
+
 # Turn on background transparency
 Set background transparent to true in Neovim located in:
 ```console
