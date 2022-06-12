@@ -1,8 +1,8 @@
 # Applications in KDE Plasma Xorg
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow gwenview celluloid sleek python-pip
 
 # Applications in KDE Plasma Wayland
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols keepassxc okular firefox time stow
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols keepassxc okular firefox time stow gwenview celluloid sleek python-pip
 
 # Markdown applications
 pacman -S pandoc texlive-most
