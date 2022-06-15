@@ -74,13 +74,13 @@ vim.keymap.set("n", "<A-h>", ":Telescope help_tags<CR>")
 -- vim.keymap.set("n", "<C-j>", ":lua require('dap').step_over()<CR>")
 -- vim.keymap.set("n", "<C-l>", ":lua require('dap').step_into()<CR>")
 -- vim.keymap.set("n", "<C-k>", ":lua require('dap').step_out()<CR>")
-vim.keymap.set("n", "<Space>dn", ":lua require('dap').continue()<CR>")
-vim.keymap.set("n", "<Space>db", ":lua require('dap').toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<Space>dk", ":lua require('dap').up()<CR>")
-vim.keymap.set("n", "<Space>dj", ":lua require('dap').down()<CR>")
+-- vim.keymap.set("n", "<Space>dn", ":lua require('dap').continue()<CR>")
+-- vim.keymap.set("n", "<Space>db", ":lua require('dap').toggle_breakpoint()<CR>")
+-- vim.keymap.set("n", "<Space>dk", ":lua require('dap').up()<CR>")
+-- vim.keymap.set("n", "<Space>dj", ":lua require('dap').down()<CR>")
 
-vim.keymap.set("n", "<Space>di", ":lua require('dap.ui.widgets').hover()<CR>")
-vim.keymap.set("n", "<Space>ds", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>")
+-- vim.keymap.set("n", "<Space>di", ":lua require('dap.ui.widgets').hover()<CR>")
+-- vim.keymap.set("n", "<Space>ds", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>")
 -- vim.keymap.set("n", "<F5>", ":lua require('debugHelper').attach()<CR>")
 -- vim.keymap.set("n", "<F5>", ":lua require('dap').debugHelper.attach()<CR>")
 
@@ -94,7 +94,8 @@ vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>") -- closes wipesout buffer
 -- Comment
 -- The design of vim recognizes <C-/> as <C-_> !!!
 vim.keymap.set("n", "<C-_>", ":normal gcc<CR>")
--- keymap("v", "<C-_>", ":normal gb<CR>", opts )
+vim.keymap.set("v", "<C-_>", ":normal gcc<CR>")
+vim.keymap.set("v", "<C-S-_>", ":normal gb<CR>")
 
 -- Colorscheme Material toggler
 --Lua:

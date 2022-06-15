@@ -38,6 +38,8 @@ local options = {
 
 vim.opt.shortmess:append "c"
 
+vim.cmd [[ hi Normal guibg=NONE ctermbg=NONE ]]
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
