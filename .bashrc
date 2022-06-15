@@ -47,12 +47,14 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
 
 # export PATH="$PATH:~/.config/Qt/Tools/QtCreator/bin"
-export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
+# export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
 
 ### ALIASES ###
 
