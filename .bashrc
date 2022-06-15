@@ -47,6 +47,8 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+export PATH="$PATH:/home/alfredo/.cargo/bin"
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
@@ -398,4 +400,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-

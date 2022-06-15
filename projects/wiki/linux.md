@@ -1,3 +1,8 @@
+#Update fonts on system
+```console
+fc-cache -f -v
+```
+
 # Wipe file system from USB
 The device can be for example 
 ```console
