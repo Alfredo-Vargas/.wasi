@@ -5,6 +5,7 @@
 wget -q --spider http://google.com
 
 if [ $? -eq 0 ]; then
+  git -C $HOME/.wasi fetch
   git -C $HOME/.wasi pull
 fi
 
