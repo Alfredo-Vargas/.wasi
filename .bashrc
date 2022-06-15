@@ -189,21 +189,7 @@ alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 #our experimental - best option for the moment
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alfredo/.config/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alfredo/.config/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+#
 alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias ram='rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist'
