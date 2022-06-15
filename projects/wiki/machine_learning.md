@@ -38,13 +38,18 @@ conda create --clone <venv-name> --name <new-venv>
 ```
 
 ## Export and create an environment from a yaml file
-```conda
+```console
 conda env export --name ENVNAME > envname.yml
 conda env create --file envname.yml
 ```
 If a file named environment.yml is present in a directory you could create an environment by
 ```console
 conda env create
+```
+
+## To NOT activate conda by default
+```console
+conda config --set auto_activate_base false
 ```
 
 ## To install conda packages (make sure virtual environment is activated)
