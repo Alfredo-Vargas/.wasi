@@ -383,6 +383,7 @@ alias personal='cp -Rf /personal/* ~'
 # cpufetch
 # colorscript random
 
+unset CONDA_SHLVL
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/alfredo/.config/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
