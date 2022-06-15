@@ -9,6 +9,7 @@ npm install -g eslint
 npm install -g --save-dev --save-exact prettier
 npm install -g prettier-plugin-solidity
 cargo install stylua
+pip install black
 
 # Markdown applications
 pacman -S pandoc texlive-most

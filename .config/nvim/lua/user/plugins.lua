@@ -59,10 +59,14 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use {  -- to use for winbar
-    "SmiteshP/nvim-gps",
-    requires = "nvim-treesitter/nvim-treesitter"
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
   }
+  -- use {  -- to use for winbar
+  --   "SmiteshP/nvim-gps",
+  --   requires = "nvim-treesitter/nvim-treesitter"
+  -- }
   use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
