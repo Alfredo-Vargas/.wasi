@@ -1,6 +1,5 @@
 local fn = vim.fn
 
-
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -81,6 +80,9 @@ return packer.startup(function(use)
   use 'marko-cerovac/material.nvim'
   use 'bluz71/vim-nightfly-guicolors'
   use 'bluz71/vim-moonfly-colors'
+
+  -- Transparency
+  use "xiyaowong/nvim-transparent"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
