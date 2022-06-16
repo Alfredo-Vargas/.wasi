@@ -1,8 +1,10 @@
 # Applications in KDE Plasma Xorg
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow gwenview celluloid sleek python-pip ripgrep flake8
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow 
+pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod
 
 # Applications in KDE Plasma Wayland
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols keepassxc okular firefox time stow gwenview celluloid sleek python-pip ripgrep flake8
+pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols spectacle keepassxc okular firefox time stow 
+pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod
 
 # For Null-ls
 npm install -g eslint
