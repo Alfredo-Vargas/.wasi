@@ -1,8 +1,9 @@
--- local opts = { noremap = true, silent = true }
--- local term_opts = { silent = true }
+local opts = { noremap = true, silent = true }
 
--- Shorten function name (old way to set keymaps)
--- local keymap = vim.api.nvim_set_keymap
+local term_opts = { silent = true }
+
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 vim.keymap.set("", "<Space>", "<Nop>")
@@ -19,23 +20,20 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-
--- New way to remap!!!
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
--- New way to remap!!!
+-- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
-
--- Navigate buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>")
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
+-- Naviagate buffers
+-- vim.keymap.set("n", "<S-l>", ":bnext<CR>")
+-- vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 -- Move text up and down
 vim.keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
@@ -62,50 +60,60 @@ vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
--- NVim-Telescope 
-vim.keymap.set("n", "<A-g>", ":Telescope grep_string<CR>")
-vim.keymap.set("n", "<A-f>", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<A-b>", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<A-h>", ":Telescope help_tags<CR>")
-
--- Nvim-DAP -- Debug Adapter Protocol
--- vim.keymap.set("n", "<F8>", ":lua require('dap').run_last()<CR>")
--- vim.keymap.set("n", "<F9>", ":lua require('dap').repl.open({}, 'vsplit')<CR><C-w>v")
--- vim.keymap.set("n", "<C-j>", ":lua require('dap').step_over()<CR>")
--- vim.keymap.set("n", "<C-l>", ":lua require('dap').step_into()<CR>")
--- vim.keymap.set("n", "<C-k>", ":lua require('dap').step_out()<CR>")
--- vim.keymap.set("n", "<Space>dn", ":lua require('dap').continue()<CR>")
--- vim.keymap.set("n", "<Space>db", ":lua require('dap').toggle_breakpoint()<CR>")
--- vim.keymap.set("n", "<Space>dk", ":lua require('dap').up()<CR>")
--- vim.keymap.set("n", "<Space>dj", ":lua require('dap').down()<CR>")
-
--- vim.keymap.set("n", "<Space>di", ":lua require('dap.ui.widgets').hover()<CR>")
--- vim.keymap.set("n", "<Space>ds", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>")
--- vim.keymap.set("n", "<F5>", ":lua require('debugHelper').attach()<CR>")
--- vim.keymap.set("n", "<F5>", ":lua require('dap').debugHelper.attach()<CR>")
-
--- Vim-bbye --
-vim.keymap.set("n", "<C-q>", ":Bdelete<CR>") -- closes current buffer
-vim.keymap.set("n", "<C-e>", ":Bwipeout<CR>") -- closes wipesout buffer
-
--- Here are General Purpose Keymaps (try to set up keymaps that are convention with other programs)
--- NvimTreeToggle
-vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>") -- closes wipesout buffer
--- Comment
--- The design of vim recognizes <C-/> as <C-_> !!!
-vim.keymap.set("n", "<C-_>", ":normal gcc<CR>")
-vim.keymap.set("v", "<C-_>", ":normal gcc<CR>")
-vim.keymap.set("v", "<C-S-_>", ":normal gb<CR>")
-
--- Colorscheme Material toggler
---Lua:
-vim.keymap.set("n", "<Space>m", ":lua require('material.functions').toggle_style()<CR>")
-vim.keymap.set("n", "<Space>,", ":colorscheme darkplus<CR>")
-
 -- Terminal --
 -- Better terminal navigation
--- vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h")
--- vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j")
--- vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
--- vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
+-- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- NvimTreeToggle
+vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>") -- closes wipesout buffer
 
+-- Custom
+keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+-- NOTE: the fact that tab and ctrl-i are the same is stupid
+-- keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<C-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
+keymap("n", "<F3>", ":e .<cr>", opts)
+keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+keymap(
+  "n",
+  "<F6>",
+  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
+  opts
+)
+keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
+keymap(
+  "n",
+  "<C-p>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  opts
+)
+
+keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
+keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
+
+keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
+-- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)
+-- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
+-- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
+-- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
+-- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)
+-- keymap("n", "gx", [[:execute '!brave ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+-- Change '<CR>' to whatever shortcut you like :)
+vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "=",
+  "<cmd>JABSOpen<cr>",
+  { noremap = true, silent = true, nowait = true }
+)

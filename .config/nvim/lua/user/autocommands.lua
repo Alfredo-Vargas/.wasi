@@ -4,6 +4,7 @@
 --     vim.cmd [[
 --       set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
 --     ]]
+--   end,
 -- })
 
 vim.api.nvim_create_autocmd({ "User" }, {
@@ -16,11 +17,11 @@ vim.api.nvim_create_autocmd({ "User" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR>
-      set nobuflisted
+      nnoremap <silent> <buffer> q :close<CR> 
+      set nobuflisted 
     ]]
   end,
 })
@@ -62,13 +63,11 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   end,
 })
 
---
--- vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
---   callback = function()
---     require("user.winbar").get_winbar()
---   end,
--- })
---
+vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
+  callback = function()
+    require("user.winbar").get_winbar()
+  end,
+})
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
@@ -83,7 +82,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.java", "*.py"},
+  pattern = { "*.java" },
   callback = function()
     vim.lsp.codelens.refresh()
   end,
@@ -94,4 +93,3 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     vim.cmd "hi link illuminatedWord LspReferenceText"
   end,
 })
-
