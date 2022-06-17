@@ -107,6 +107,9 @@ return packer.startup(function(use)
   use "rose-pine/neovim"
   -- use "rebelot/kanagawa.nvim"
 
+  -- Transparency
+  use "xiyaowong/nvim-transparent"
+
   -- cmp plugins
   -- use "hrsh7th/nvim-cmp" -- The completion plugin
   use {
