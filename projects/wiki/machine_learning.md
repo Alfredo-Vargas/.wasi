@@ -130,3 +130,9 @@ pip install jupyterlab
 pip install jupyterlab-lsp
 ```
 Search for the themes `darcula` and vim plugins (`jupyterlab_vim`)
+
+## Install `cudatoolkit`
+Whenever using TensorFlow or Pytorch, use conda to install cudatoolkit
+```console
+conda install cudatoolkit
+```
