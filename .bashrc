@@ -58,6 +58,7 @@ bind "set completion-ignore-case on"
 
 ### ALIASES ###
 
+alias sm='cd ~/.summer'
 alias fd='fd -H'
 alias t6='/home/alfredo/projects/scripts/t2x3'
 alias t4='/home/alfredo/projects/scripts/t2x2'

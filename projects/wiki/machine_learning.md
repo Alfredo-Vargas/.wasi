@@ -129,4 +129,4 @@ watch -n -1 nvidia-smi
 pip install jupyterlab
 pip install jupyterlab-lsp
 ```
-Search for the themes `darcula` and vim plugins
+Search for the themes `darcula` and vim plugins (`jupyterlab_vim`)
