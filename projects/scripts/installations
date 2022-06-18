@@ -1,9 +1,9 @@
 # Applications in KDE Plasma Xorg
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow 
+pacman -S git base-devel alacritty tmux vi vim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow 
 pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod
 
 # Applications in KDE Plasma Wayland
-pacman -S git base-devel alacritty tmux vi vim neovim ttf-nerd-fonts-symbols spectacle keepassxc okular firefox time stow 
+pacman -S git base-devel alacritty tmux vi vim ttf-nerd-fonts-symbols spectacle keepassxc okular firefox time stow 
 pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod wl-clipboard
 
 # For Null-ls
@@ -16,9 +16,19 @@ pip install black
 # Markdown applications
 pacman -S pandoc texlive-most
 
+
+# For kernel-linux Laptop
+pacman -S linux headers
+
+# For desktop with Nvidia GPU
+pacman -S cuda
+
 # For FrontEnd and BackEnd development
 pacman -S php php-cgi php-gd php-pgsql php-apache mariadb libmariadbclient mariadb-clients yay 
 
 # To handle ntfs system file format in linux
 pacman -S ntfs-3g
+
+# paru 
+paru neovim-nightly-bin
 

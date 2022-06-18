@@ -131,8 +131,14 @@ pip install jupyterlab-lsp
 ```
 Search for the themes `darcula` and vim plugins (`jupyterlab_vim`)
 
-## Install `cudatoolkit`
-Whenever using TensorFlow or Pytorch, use conda to install cudatoolkit
+## Install `cuda`, `cudatoolkit` and `cudnn`
+1. On Arch Linux you need to first install 
+```console
+sudo pacman -S cuda
+```
+2. In your conda environment if you are plan to use your own GPU for TensorFlow and Pytorch, then:
 ```console
 conda install cudatoolkit
+conda install cudnn
 ```
+
