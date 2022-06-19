@@ -107,6 +107,7 @@ return packer.startup(function(use)
   use "rose-pine/neovim"
   -- use "rebelot/kanagawa.nvim"
 
+
   -- Transparency
   use "xiyaowong/nvim-transparent"
 
@@ -168,7 +169,7 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate"
 
   -- Java
-  use "mfussenegger/nvim-jdtls"
+  -- use "mfussenegger/nvim-jdtls"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

@@ -1,10 +1,10 @@
 # Applications in KDE Plasma Xorg
 pacman -S git base-devel alacritty tmux vi vim ttf-nerd-fonts-symbols flameshot keepassxc okular xclip firefox time stow 
-pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod rsync
+pacman -S gwenview celluloid python-pip ripgrep flake8 fortune-mod rsync fd
 
 # Applications in KDE Plasma Wayland
 pacman -S git base-devel alacritty tmux vi vim ttf-nerd-fonts-symbols spectacle keepassxc okular firefox time stow 
-pacman -S gwenview celluloid sleek python-pip ripgrep flake8 fortune-mod wl-clipboard rsync
+pacman -S gwenview celluloid python-pip ripgrep flake8 fortune-mod wl-clipboard rsync fd
 
 # For Null-ls
 npm install -g eslint
@@ -30,5 +30,8 @@ pacman -S php php-cgi php-gd php-pgsql php-apache mariadb libmariadbclient maria
 pacman -S ntfs-3g
 
 # paru 
-paru neovim-nightly-bin
+paru neovim-nightly-bin kwin-bismuth pamac-aur
+
+# flatpack 
+sleek
 
