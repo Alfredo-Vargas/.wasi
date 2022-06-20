@@ -1,3 +1,30 @@
+# Printer Installation on Arc with KDE Plasma
+- Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
+- First you need to install.
+```console
+sudo pacman -S cups
+sudo systemctl enable cups
+sudo systemctl start cups
+```
+You can optionally also install `cups-pdf` (optionally)
+- Now check if you detect your `usb` connected printer is recognized by your system. For this use the command `lsusb` to list all USB devices current recognized. The `lsusb` can be installed by: 
+```console
+sudo pacman -S usbutils
+```
+- Once the printer is recognized you need to install the printers' drivers. Particularly for Canon those are part of the Gutenprint project. The drivers from the project that need to be installed are:
+```console
+sudo pacman -S gutenprint
+sudo pacman -S foomatic-db-gutenprint-ppds
+```
+- Then navigate to `localhost:631` to confirm the installation.
+- At this point if there were other printers, it is a good idea to run:
+```console
+sudo cups-genppupdate
+sudo systemctl restart cups.service
+```
+- Install the kde printer utility and click add new printer.
+
+
 #Update fonts on system
 ```console
 fc-cache -f -v
