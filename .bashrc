@@ -58,6 +58,7 @@ bind "set completion-ignore-case on"
 
 ### ALIASES ###
 
+alias cvim='cd ~/.config/slinks/nvim_config/'
 alias sm='cd ~/.config/slinks/summer_slink'
 alias alf='cd ~/.config/slinks/mega_alfredo/'
 alias tab='cd ~/.config/slinks/mega_tabitha/'
