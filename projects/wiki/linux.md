@@ -1,4 +1,11 @@
-#Update fonts on system
+# Check if a binary has library dependency
+PAM stands for Linux Pluggable Authentication Modules which is a suite of libraries that allows a Linux system administrator to configure methods to authenticate users.
+```console
+ldd <binary_location> | grep <library_name>
+ldd /usr/bin/sddm | grep libpam.so
+```
+
+# Update fonts on system
 ```console
 fc-cache -f -v
 ```
