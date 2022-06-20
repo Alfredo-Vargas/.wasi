@@ -1,2 +1,4 @@
-# To uninstall a `Kwin` from the terminal
-Get into Discover and uninstall it on the list.
+# To make sddm more compatible with Wayland
+```console
+paru sddm-git
+```
