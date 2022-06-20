@@ -39,5 +39,3 @@ Declarations using var can be reassigned to other values, unlike val variable de
 
 ### Tips:
 - Is bad practice to launch the database from the main thread, instead using a background thread.
-
-
