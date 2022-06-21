@@ -1,3 +1,7 @@
+## Check GPU info
+```console
+sudo lshw -C display
+```
 ## Check GPU usage
 ```console
 watch -n -1 nvidia-smi

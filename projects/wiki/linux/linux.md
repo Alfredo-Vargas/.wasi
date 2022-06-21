@@ -117,10 +117,10 @@ tar -ztvf archive.tar.gz
 tar -jtvf archive.tar.bz2
 ```
 
-# To change mod of many objects
+# To change permissions of files and directories
 ```console
-chmod 755 $(find /path/to/base/dir -type d)
-chmod 644 $(find /path/to/base/dir -type f)
+find /base/dir -type d -print0 | xargs -0 chmod 770
+find /base/dir -type f -print0 | xargs -0 chmod 660
 ```
 
 # To install Nerd Fonts
