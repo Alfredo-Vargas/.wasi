@@ -1,4 +1,3 @@
-
 ### EXPORT TEST ###
 export EDITOR='vim'
 export VISUAL='vim'
