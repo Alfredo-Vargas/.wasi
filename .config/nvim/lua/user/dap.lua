@@ -8,8 +8,6 @@ if not dap_ui_status_ok then
 	return
 end
 
-require('dap-python').setup('/usr/bin/python')
-
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
@@ -54,6 +52,7 @@ dapui.setup {
   },
   windows = { indent = 1 },
 }
+
 local icons = require "user.icons"
 
 vim.fn.sign_define('DapBreakpoint', {text=icons.ui.Bug, texthl='DiagnosticSignError', linehl='', numhl=''})
@@ -67,3 +66,4 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
