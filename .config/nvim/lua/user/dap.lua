@@ -8,6 +8,9 @@ if not dap_ui_status_ok then
 	return
 end
 
+require('dap-python').setup('/usr/bin/python')
+require('dapui').setup()
+
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
