@@ -1,3 +1,25 @@
+## AWK: Aho, Weinberger, and Kernighan Command
+- Program that has the following structures, by default the separator is the space:
+```bash
+awk 'program' <file1> <file2> ...
+awk -f <program-file> <file1> <file2> ...
+```
+- `awk '{print $n}' <file1>` : prints the n-field (column)
+- `awk '{print $NF}' <file1>` : prints the N-field (column), which is the last one
+- `awk -F ":" '{print $1}' /etc/passwd` : will print usernames
+- `awk '{print $1\t$2+$3}' /etc/passwd` : will print columns 1 and 2 plus 3 tab separated
+- `awk 'BEGIN{FS=":"; OFS="-"} {print $1,$6,$7}' <file>` : field separated is `:` and output has `-` as field separated
+- `awk '$1 ~ /regex/ {print $0}' <file>` : print only the lines that match the declared regex
+- `awk '{print substr($0, 4)}' <file>` : to ignore the characters from 0 until 4
+- Print processes which uses `/bin/bash` as the last field on the list
+```bash
+ps -ef | awk '{ if($NF == "/bin/bash") print $0}'
+```
+- Print the square root of the first 10 numbers:
+```bash
+awk 'BEGIN { for(i=1; i<=10; i++) print "The square root of", i, "is", i*i;}'
+```
+
 ## SED: Stream Editor
 - Has mainly the following structure:
 ```bash
@@ -30,9 +52,6 @@ sed -i 's/[a-z]/\U&/g' <file>
 ```bash
 sed 11q <file>
 ```
-
-## AWK: Commands
-
 
 # Bash Shell Scripts `Inliners`
 
