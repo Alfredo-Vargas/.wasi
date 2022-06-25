@@ -1,14 +1,37 @@
-## sed command
-- Has mainly the following syntax:
+## SED: Stream Editor
+- Has mainly the following structure:
 ```bash
 sed "<sed_command>" <file>
+<output_on_stdout>
 ```
-- With `g` replaces take effect every single match. Without `g` only ones per line.
-- With `-i` option `sed` overwrites original file with the given std output.
-- `sed "s/to_be_replaced/replacement/g <file>"`
-- `sed "s/to_be_replaced/replacement/g; /pattern/ d" <file>` : after substitution deletes lines that match the pattern.
+- `sed` can use as separators: `/`, `|` or `#`
+- `sed /line_pattern/s/find/replace/ <file>` : search for pattern and then performs substitution
+- `sed -i "s/find/replace/g <file>"` : the `g` stands for global applicability and the flag `-i` means to write to the file given.
+- `sed "s/find/replace/g; /pattern/ d" <file>` : after substitution deletes lines that match the pattern.-
+- `sed -e s/find1/replace1/g -e s/find2/replace2/g` : the flag `-e` is required whenever multiple substitutions are placed.
+- `sed -n '/pattern/p` : print lines that contain the pattern.
+- Remove extra spaces at the end of a line from a file:
+```bash
+sed -i 's/ *$//' <file>
+```
+- Remove extra tabs at the end of a line from a file:
+```bash
+sed -i 's/[[:space:]]*$//' <file>
+```
+- Remove empty lines:
+```bash
+sed -i '/^$/d' <file>
+```
+- Change lower case to upper case (change U to L and [a-z] to [A-Z] for the contrary):
+```bash
+sed -i 's/[a-z]/\U&/g' <file>
+```
+- Print the first eleven lines:
+```bash
+sed 11q <file>
+```
 
-## awk Commands
+## AWK: Commands
 
 
 # Bash Shell Scripts `Inliners`
