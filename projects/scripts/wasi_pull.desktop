@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+GenericName=Wasi Puller
+Comment=Auto sync your wasi configuration on startup.
+Terminal=false
+X-KDE-AutostartScript=true
+Exec=bash /home/alfredo/projects/scripts/wasi_pull.sh

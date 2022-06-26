@@ -1,3 +1,6 @@
+## TEE: read from  stdin and write to stdout and files
+- `echo "yo" | tee path/to/file`
+
 ## AWK: Aho, Weinberger, and Kernighan Command
 - Program that has the following structures, by default the separator is the space:
 ```bash
@@ -32,6 +35,7 @@ sed "<sed_command>" <file>
 - `sed "s/find/replace/g; /pattern/ d" <file>` : after substitution deletes lines that match the pattern.-
 - `sed -e s/find1/replace1/g -e s/find2/replace2/g` : the flag `-e` is required whenever multiple substitutions are placed.
 - `sed -n '/pattern/p` : print lines that contain the pattern.
+
 - Remove extra spaces at the end of a line from a file:
 ```bash
 sed -i 's/ *$//' <file>

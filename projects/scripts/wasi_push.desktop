@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+GenericName=Wasi Pusher
+Comment=Auto push your wasi configuration on shutdown.
+Terminal=false
+X-KDE-AutostartScript=true
+Exec=bash /home/alfredo/projects/scripts/wasi_push.sh
