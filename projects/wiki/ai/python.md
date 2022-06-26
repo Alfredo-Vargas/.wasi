@@ -34,6 +34,47 @@ with open("output.json", "w") as outfile:
   json.dump(entries_dict, outfile)
 ```
 
+# Recursion
+## Example
+```python
+def sum_positive_numbers(n):
+  if n < 2:
+    return 1
+  return n + sum_positive_numbers(n - 1)
+ ```
+
+# Strings
+- References from: [link](https://docs.python.org/3/library/stdtypes.html#string-methods)
+## Basic methods
+- `string.upper` or `string.lower` returns the uppercase or lowercase version
+- `string.index("i")` : returns the index position of char `"i"`
+- `" yes ".strip()` : gets rid of the white spaces. `lstrip()` and `rstrip()` can also be used
+- `tabitha.count("a")` : gets the number of occurrences of `"a"` in the string
+- `"123".isnumeric()` : returns a boolean
+- `"separator".join(["string1", "string2", ...])` : joins the strings on the list by the given separator
+- `long_string.split(separator)` : splits the string given the separator
+## Formatting output
+- C-like Formatting
+```python
+print("Your lucky number is {number}, {name}.".format(name=name, number=len(name)*3))
+```
+- Table formatting, `>` aligns to the right and `<` aligns to the left
+```python
+def to_celsius(x):
+  return (x-32)*5/9
+
+for x in range(0,101, 10):
+  print("{:>3} F | {:>6}.2f C".format(x, to_celsius(x)))
+```
+- Printing using placeholders
+```python
+first = "apple"
+second = "banana"
+third = "carrot"
+formatted_string = "{0} {2} {1}".format(first, second, third)
+print(formatted_string)  # Outputs: apple carrot banana
+```
+
 # Pydoc
 - Every install of python comes with this service that can generate a web-server for your documentation.
 ```
@@ -59,3 +100,4 @@ y = f(x)
 
 # TensorFlow
 - Web API documentation: [tensor-flow doc](https://www.tensorflow.org/api_docs/python/tf/all_symbols)
+
