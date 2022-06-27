@@ -53,6 +53,8 @@ def sum_positive_numbers(n):
 - `"123".isnumeric()` : returns a boolean
 - `"separator".join(["string1", "string2", ...])` : joins the strings on the list by the given separator
 - `long_string.split(separator)` : splits the string given the separator
+- `sentence.replace(word, word.upper())` : change a single word from a string to uppercase
+
 ## Formatting output
 - C-like Formatting
 ```python
@@ -73,6 +75,29 @@ second = "banana"
 third = "carrot"
 formatted_string = "{0} {2} {1}".format(first, second, third)
 print(formatted_string)  # Outputs: apple carrot banana
+```
+
+# Lists
+## Basic commands
+- `list.insert(index_number, "New data")` : insertion by index
+- `list_comprehension = [x for x in range(n + 1) if x % 2 != 0]` : Odd numbers using list comprehension
+- For loop using enumeration
+```python
+winners = ["Ashley", "Dylan", "Reese"]
+for index, person in enumerate(winners):
+  print("{} - {}".format(index + 1, person))
+```
+
+# Tuples
+- `hours, minutes, seconds = result` : where result is a tuple with three values
+
+# Dictionaries
+- `"given key" in my_dict` : returns True or False
+- Looping through keys and values:
+```python
+for key, value in dict.items():
+  key = ...
+  value = ...
 ```
 
 # Pydoc
