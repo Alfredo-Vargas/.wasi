@@ -1,4 +1,4 @@
-### EXPORT DEFAULTS###
+###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
 export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
