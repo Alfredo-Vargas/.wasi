@@ -34,6 +34,35 @@ with open("output.json", "w") as outfile:
   json.dump(entries_dict, outfile)
 ```
 
+# Classes
+## Special Methods
+- `def __init__(self, ...):` : It is the constructor used to create an instance
+- `def __str__(self):` : It is the customized print of the class
+- `help(ClassName)` : Will open the help related to that class. The help string are written between triple double quotes (indented at the same level of the block that is documented).
+- Inheritance in Python:
+```python
+class Fruit:
+  def __init__(self, color, flavor):
+    self.color = color
+    self.flavor = flavor
+class Apple(Fruit):
+  pass
+```
+- Composition : One needs to initialize mutable attributes in the constructor to avoid all instances to have the same attributes
+```python
+class Repository:
+  def __init__(self):
+    self.packages = {}
+  def add_package(self, package):
+    self.packages[package.name] = package
+  def total_size(self):
+    result = 0
+    for package in self.package.values():
+      result += package.size
+    return result
+
+```
+
 # Recursion
 ## Example
 ```python
@@ -81,6 +110,7 @@ print(formatted_string)  # Outputs: apple carrot banana
 ## Basic commands
 - `list.insert(index_number, "New data")` : insertion by index
 - `list_comprehension = [x for x in range(n + 1) if x % 2 != 0]` : Odd numbers using list comprehension
+- `list.sort(), sorted(list), sorted(list, key=len)` : changes original list, creates a new sorted list with a given key
 - For loop using enumeration
 ```python
 winners = ["Ashley", "Dylan", "Reese"]
