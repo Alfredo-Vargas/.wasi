@@ -1,5 +1,17 @@
 # Several Vim/Neovim Commands
 
+## Go commands
+- `gqq` : Makes a paragraph by inserting `CR` to making a paragraph not to have lines longer than 80 chars.
+- `guu` : Makes the line uncapitalized.
+- `gUU` : Makes the line capitalized
+- `~` : Changes capitalization of single letter.
+- `g~` : Changes capitalization of single line.
+- `gd` : Goes to the file given by the current string (path).
+- `gv` : Goes to last selected item.
+- `J` : Joins the lines.
+- `gJ` : Joins selected lines without spaces.
+- `g&` : Make last substitution global.
+
 ## Interesting commands
 - `:%!xxd` : view a text file in hex mode
 - `:%!xxd -r` : change view back from hex mode
