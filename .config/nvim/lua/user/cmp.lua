@@ -116,10 +116,10 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
-    { name = "cmp_tabnine" },
     { name = "path" },
     { name = "emoji" },
     { name = "dap" },
+    { name = "cmp_tabnine" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
