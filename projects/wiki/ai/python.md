@@ -1,6 +1,16 @@
 ###### This is a guide from the most common used commands for Machine Learning Engineering
 ###### By Alfredo Vargas.
 
+# OS Module
+- `os.rename(), os.create(), os.path.exists(), os.remove(), os.path.getmtime(), os.isfile(), os.path.abspath(), os.path.getsize()` : are some common used functions
+- `os.getcwd(), os.mkdir(), os.chdir(), os.rmdir(), os.listdir(), os.path.isdir(), os.path.join()` : more common used functions
+- Get Unix time stamp from a file:
+```python
+import datetime
+timestamp = os.path.getmtime("file.ext")
+datetime.datetime.fromtimestamp(timestamp)
+```
+
 # Regular Expressions
 - Use raw strings in Python to avoid collisions of Python and re module scape characters `\`. E.g: `r"\n"`
 - `.` matches any char except space (unless DOTALL flag is specified)
