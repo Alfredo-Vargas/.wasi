@@ -1,4 +1,4 @@
-###### This is a guide from the most common used commands for Machine Learning Engineering
+###### This is a guide from with the most recently learned commands 
 ###### By Alfredo Vargas.
 
 # OS Module
@@ -12,13 +12,79 @@ datetime.datetime.fromtimestamp(timestamp)
 ```
 
 # Regular Expressions
+- Test your regex on the following link: [regex101](https://regex101.com)
 - Use raw strings in Python to avoid collisions of Python and re module scape characters `\`. E.g: `r"\n"`
-- `.` matches any char except space (unless DOTALL flag is specified)
+- `.` matches any char except newline (unless DOTALL flag is specified)
 - `^`, `$`, `*`, `+`, `?`, matches beginning, end, 0 or more, 1 or more, 0 or 1
 - `RE <.*>` with string `'<a> b <c>'` will match the whole string, but `RE<.*?>` will match only `<a>`
-- `a{6}` will match six `a` characters
+- `a{6}` will match six `a` characters. `{ }` specifies the number of repetitions
 - `a{3,5}` will match from 3 to 5 `a` characters. Omitting first bound implies zero, omitting second bound implies infinity
+- `\d` matches digit, `\D` matches not a digit
+- `\w` matches word, `\W` matches not a word
+- `\s` matches space, `\S` matches not space
+- `\b` word boundary, `\B` not a word boundary
+- `[ ]` character class, `( )` group
 - `(?<=RE)` to specify a regular that precedes the one we are interested in
+- `re.search`, `re.findall`, `re.split`, `re.replace` and `re.sub` are the possible functions to use with regular expressions
+## Examples:
+1. Letter `a` or `A` have to be present at least twice. See how $\{1,\} \equiv +$
+```python
+re.search(r".*[a|A]{1,}.*"[a|A]{1,}.*", string)
+re.search(r".*[a|A]+.*"[a|A]+.*", string)
+```
+2. Check if the string looks like a normal sentence, meaning that it starts with an uppercase letter, followed by at least some lowercase letters or a space, and ends w:  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+
+Copyright (c)  Author. All rights reserved.
+
+Licensed under the "THE BEER-WARE LICENSE" (Revision 42):
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+  0. You just DO WHAT THE FUCK YOU WANT TO.ith a period, question mark, or exclamation point. 
+```python
+re.search(r"^[A-Z][a-z\s]*[.?!]$", string)
+```
+3. The time format of a 12-hour clock, is as follows: the hour is between 1 and 12, with no leading zero, followed by a colon, then minutes between 00 and 59, then an optional space, and then AM or PM, in upper or lower case
+```python
+re.search(r"^[1-9][0-2]?:[0-5][0-9]\s?[am$|pm$|AM$|PM$]", string)
+```
+4. Capturing Groups
+```python
+result = re.search(r"^(\w*), (\w*)$", "Lovelace, Ada")
+print(result.groups())
+('Lovelace', 'Ada')
+print(result[0])
+Lovelace, Ada
+print(result[1])
+Lovelace
+print(result[2])
+Ada
+```
+
+5. Using word limits `\b` to indicate that we want full words:
+```python
+print(re.findall(r"\b[a-zA-Z]{5}\b", "A scary ghost appeared"))
+['scary', 'ghost']
+```
+
+6. Split Example
+```python
+re.split(r"([.?!])", "One sentence. Another one? And the last one!")
+['One sentence', '.', ' Another one', '?', ' And the last one', '!', '']
+```
+
+7. Substitution Example
+```python
+re.sub(r"[\w.%+-]+@[\w.-]+", "[REDACTED]", "Received an email for go_nuts95@my.example.com")
+'Received an email for [REDACTED]'
+```
+```python
+re.sub(r"^([\w .-]*), ([\w .-]*)$", r"\2 \1", "Lovelace, Ada")
+'Ada Lovelace'
+```
 
 # File related commands
 - Preferable use `with open`, beware that open returns a text io object and that read returns a whole string. Use zip to convert two lists to a dictionary:
