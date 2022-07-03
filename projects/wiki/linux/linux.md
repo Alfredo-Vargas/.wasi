@@ -1,3 +1,9 @@
+# Exit Status in Linux
+- The environment variable `$?` return the exit status of the last command which can return:
+  - `0` when everything is OK
+  - `1` when an error occurred
+
+
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
@@ -23,6 +29,13 @@ sudo cups-genppupdate
 sudo systemctl restart cups.service
 ```
 - Install the kde printer utility and click add new printer.
+
+# Check if a binary has library dependency
+PAM stands for Linux Pluggable Authentication Modules which is a suite of libraries that allows a Linux system administrator to configure methods to authenticate users.
+```bash
+ldd <binary_location> | grep <library_name>
+ldd /usr/bin/sddm | grep libpam.so
+```
 
 
 #Update fonts on system
