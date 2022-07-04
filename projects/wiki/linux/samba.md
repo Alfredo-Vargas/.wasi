@@ -9,4 +9,8 @@ In the smb.conf file copy the default configuration from [smb config](https://gi
 ```console
 testparm
 ```
-3. 
+3. To connect a windows client to your samba share the mapping has to be:
+```bash
+\\IPAddress\sharename
+```
+- Where share name is the one between brackets `[sharename]` on the file `smb.conf`

@@ -1,6 +1,28 @@
 ###### This is a guide from with the most recently learned commands 
 ###### By Alfredo Vargas.
 
+# Error Handling
+- `raise ValueError("Meaningful meassage")` : Value error to be raised after custom condition
+- `assert number > 0, f"number greater than 0 expected, got: {number}` : Feedback printed when assertion is false (Use assertion during development but never on production, as optimization flag during compile time disable them).
+- Example with `try-except block`
+```python
+def Guess(participants):
+    my_participant_dict = {}
+    for participant in participants:
+        my_participant_dict[participant] = random.randint(1, 9)
+    try:
+        if my_participant_dict['Larry'] == 9:
+            return True
+        else:
+            return False
+    except:
+        return None
+
+participants = ['Cathy','Fred','Jack','Tom']
+print(Guess(participants))
+None
+```
+
 # OS Module
 - `os.rename(), os.create(), os.path.exists(), os.remove(), os.path.getmtime(), os.isfile(), os.path.abspath(), os.path.getsize()` : are some common used functions
 - `os.getcwd(), os.mkdir(), os.chdir(), os.rmdir(), os.listdir(), os.path.isdir(), os.path.join()` : more common used functions
@@ -159,6 +181,7 @@ def sum_positive_numbers(n):
 - `"separator".join(["string1", "string2", ...])` : joins the strings on the list by the given separator
 - `long_string.split(separator)` : splits the string given the separator
 - `sentence.replace(word, word.upper())` : change a single word from a string to uppercase
+- `isinstance(object, type)` : to check if the object is instance of a particular type
 
 ## Formatting output
 - C-like Formatting
