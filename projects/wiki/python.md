@@ -1,6 +1,16 @@
 ###### This is a guide from with the most recently learned commands 
 ###### By Alfredo Vargas.
 
+# Pipe using bash and python scripts/commands
+- `cat haiku.txt | ./capitalize.py` : where one uses `sys.stdin` in python.
+- `./capitalize.py < haiku.txt` : better yet, avoid abusing cat. The contents of the python script are: 
+```python
+#!/usr/bin/env python
+import sys
+for line in sys.stdin:
+  print(line.strip().capitalize())
+```
+
 # Error Handling
 - `raise ValueError("Meaningful meassage")` : Value error to be raised after custom condition
 - `assert number > 0, f"number greater than 0 expected, got: {number}` : Feedback printed when assertion is false (Use assertion during development but never on production, as optimization flag during compile time disable them).
