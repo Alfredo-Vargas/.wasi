@@ -1,3 +1,16 @@
+# SIGNALS TO TERMINAL
+- `C-c` : sends a stop signal
+- `C-z` : sends to background, resume with fg
+- `C-s` : suspends terminal 
+- `C-q` : resumes suspended terminal 
+- `C-d` : sends end of file signal
+- Example
+```bash
+while true; do echo hello; sllep 1' dome
+C-s
+C-q
+```
+
 ## TEE: read from  stdin and write to stdout and files
 - `echo "yo" | tee path/to/file`
 
