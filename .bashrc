@@ -43,9 +43,10 @@ if [ -d "$HOME/projects/scripts" ] ;
   then PATH="$HOME/projects/scripts:$PATH"
 fi
 
-### Exports for Programming Languages
+### Exports for Programs
 export PATH="$PATH:/home/alfredo/.cargo/bin"
 # export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
+eval "$(starship init bash)"  # runs starship which uses bash
 
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
@@ -53,25 +54,17 @@ bind "set completion-ignore-case on"
 
 ### ALIASES ###
 alias cvim='cd ~/.config/slinks/nvim_config/'
+alias scripts="cd $HOME/.wasi/projects/scripts/"
 alias tm='cd ~/.config/slinks/thomas_more_dir/'
 alias sm='cd ~/.config/slinks/summer_slink'
 alias alf='cd ~/.config/slinks/mega_alfredo/'
 alias tab='cd ~/.config/slinks/mega_tabitha/'
 alias fd='fd -H'
-alias t6='/home/alfredo/projects/scripts/t2x3'
-alias t4='/home/alfredo/projects/scripts/t2x2'
-alias t2='/home/alfredo/projects/scripts/t1x2'
-alias t32='/home/alfredo/projects/scripts/t3x2'
 alias wiki='nvim /home/alfredo/projects/wiki'
 alias expresspush='sh /home/alfredo/projects/scripts/git_update.sh'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
-# set -o vi
-
-# . "$HOME/.cargo/env"
-
-eval "$(starship init bash)"
 #list
 alias ls='ls --color=auto'
 alias la='ls -a'
