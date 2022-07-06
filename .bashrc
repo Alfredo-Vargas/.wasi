@@ -1,3 +1,4 @@
+### Makes vi possible in your terminal where you see one line at the time
 set -o vi
 ###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
@@ -20,22 +21,15 @@ export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
 
-
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # PS1='[\u@\h \W]\$ '
 PS1="\W\$ " # so your username does not appear
 # PS2 is the secondary prompt
 export PS1;
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
+# Adding to env variable $PATH
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -45,17 +39,19 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/projects/scripts" ] ;
+  then PATH="$HOME/projects/scripts:$PATH"
+fi
+
+### Exports for Programming Languages
 export PATH="$PATH:/home/alfredo/.cargo/bin"
+# export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
 
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
 
-# export PATH="$PATH:~/.config/Qt/Tools/QtCreator/bin"
-# export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
-
 ### ALIASES ###
-
 alias cvim='cd ~/.config/slinks/nvim_config/'
 alias tm='cd ~/.config/slinks/thomas_more_dir/'
 alias sm='cd ~/.config/slinks/summer_slink'
@@ -66,7 +62,6 @@ alias t6='/home/alfredo/projects/scripts/t2x3'
 alias t4='/home/alfredo/projects/scripts/t2x2'
 alias t2='/home/alfredo/projects/scripts/t1x2'
 alias t32='/home/alfredo/projects/scripts/t3x2'
-alias myide='/home/alfredo/projects/scripts/ide'
 alias wiki='nvim /home/alfredo/projects/wiki'
 alias expresspush='sh /home/alfredo/projects/scripts/git_update.sh'
 alias byebye='sudo shutdown -h now'
