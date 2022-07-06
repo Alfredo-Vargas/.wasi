@@ -1,3 +1,6 @@
+# Some Linux terminal useful options:
+- `setfont ter-132n` : makes your font bigger for your current terminal session
+
 # SIGNALS TO TERMINAL
 - `C-c` : sends a stop signal
 - `C-z` : sends to background, resume with fg

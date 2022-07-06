@@ -1,3 +1,4 @@
+set -o vi
 ###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
 export VISUAL='vim'
