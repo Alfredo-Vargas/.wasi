@@ -49,7 +49,7 @@ export PATH="$PATH:/home/alfredo/.cargo/bin"
 # export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
 eval "$(starship init bash)"  # runs starship which uses bash
 
-#ignore upper and lowercase when TAB completion
+# ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
 
@@ -65,59 +65,44 @@ alias wiki='nvim /home/alfredo/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
-#list
+# list
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
-#ip
+# ip
 alias ip='ip --color=auto'
 
-#fix obvious typo's
+# fix some naive typo's
 alias cd..='cd ..'
-alias pdw='pwd'
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias updte='sudo pacman -Syyu'
-alias updqte='sudo pacman -Syyu'
-alias upqll='paru -Syu --noconfirm'
-alias upal='paru -Syu --noconfirm'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-#readable output
+# readable output
 alias df='df -h'
 
-#keyboard
+# keyboard (can be handy specially in Belgium)
 alias give-me-azerty-be="sudo localectl set-x11-keymap be"
 alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
-alias give-me-qwerty-br="sudo localectl set-x11-keymap br-abnt2"
 
-#pacman unlock
+# pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
 
-#arcolinux logout unlock
-alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
-
-#which graphical card is working
-alias whichvga="/usr/local/bin/arcolinux-which-vga"
-
-#free
+# free
 alias free="free -mt"
 
-#continue download
+# continue download
 alias wget="wget -c"
 
-#userlist
+# userlist
 alias userlist="cut -d: -f1 /etc/passwd"
 
 # Aliases for software managment
-# pacman or pm
 alias pacman='sudo pacman --color auto'
 alias update='sudo pacman -Syyu'
 
@@ -125,25 +110,20 @@ alias update='sudo pacman -Syyu'
 alias pksyua="paru -Syu --noconfirm"
 alias upall="paru -Syu --noconfirm"
 
-#ps
+# ps
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
-#grub update
+# grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-#add new fonts
+# add new fonts
 alias update-fc='sudo fc-cache -fv'
 
-#copy/paste all content of /etc/skel over to home folder - backup of config created - beware
+# copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 alias skel='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
-#backup contents of /etc/skel to hidden backup folder in home/user
+# backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
-
-#copy shell configs
-alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
-alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
-alias cf='cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && echo "Copied."'
 
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -181,11 +161,6 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-#our experimental - best option for the moment
-#
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias ram='rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist'
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"

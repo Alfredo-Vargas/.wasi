@@ -7,24 +7,24 @@
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
-```console
+```bash
 sudo pacman -S cups
 sudo systemctl enable cups
 sudo systemctl start cups
 ```
 You can optionally also install `cups-pdf` (optionally)
 - Now check if you detect your `usb` connected printer is recognized by your system. For this use the command `lsusb` to list all USB devices current recognized. The `lsusb` can be installed by: 
-```console
+```bash
 sudo pacman -S usbutils
 ```
 - Once the printer is recognized you need to install the printers' drivers. Particularly for Canon those are part of the Gutenprint project. The drivers from the project that need to be installed are:
-```console
+```bash
 sudo pacman -S gutenprint
 sudo pacman -S foomatic-db-gutenprint-ppds
 ```
 - Then navigate to `localhost:631` to confirm the installation.
 - At this point if there were other printers, it is a good idea to run:
-```console
+```bash
 sudo cups-genppupdate
 sudo systemctl restart cups.service
 ```
@@ -39,36 +39,51 @@ ldd /usr/bin/sddm | grep libpam.so
 
 
 #Update fonts on system
-```console
+```bash
 fc-cache -f -v
 ```
 
 # Wipe file system from USB
-The device can be for example 
-```console
+- Formatting to `ext4` and eliminate all previous partitions (example the `sdd1`):
+```bash
+sudo mkfs -t ext4 /dev/sdd1
+```
+
+- The device can be for example 
+```bash
 sudo wipefs --all <device>
 ```
 
 # Create a partition in the USB
-```console
+- From the command line creating a partition
+```bash
 sudo cfdisk <device>
 ```
 Change to dos partition table, then New to create a new partition, select as primary and write changes
 
 # Make the file system in the partition
-```console
+```bash
 sudo mkfs.ext4 <device>
 ```
 
 # Transfer or copy files using the binary `rsync`
-To copy files (place/omit the verbose option when needed `-av`):
-```console
-rsync -a --progress <source> <destination>
+- `sudo rsync [OPTIONS or FLAGS] /source /destination`
+  - Flags:
+    - `-a`, `--archive` : archive mode, meaning will not modify time stamp neither permissions
+    - `-A`, `--acls` : preserve `ACLS`, which implies permissions
+    - `-X`, `--xattrs` : preserve extended attributes
+    - `--dry-run` : simulate the backup
+    - `v`, `--verbose` : increase verbosity
+    - `--delete` : makes a diff between source and destination and delete files on the destination which were deleted on source
+    - `--exclude=/path/to/dir` : excludes the given directory on the backup, wild-card may be used
+
+- Example (The project parent directory of source is not copied, only its contents, parent directory on destination must exist!):
+```bash
+sudo rysnc -aAXv --delete /home/jordan/project/ /mnt/project
 ```
 
-
 # Access your android device (mobile, gsm, phone) by installing in your Linux:
-```console
+```bash
 sudo pacman -S android-file-transfer
 ```
 
@@ -80,43 +95,43 @@ xprop <action>
 
 # Check the key property under the Xorg server 
 Just press a button after running
-```console
+```bash
 xev
 ```
 # Mount/Umount file systems
 First check the device name using `lsblk`.
 Mount a new device with name `/dev/sdd1` to `/mnt`:
-```console
+```bash
 sudo mount /dev/sdd1 /mnt
 ```
 To unmount a device mounted on `/mnt` (device name is an alternative)
-```console
+```bash
 umount /mnt
 ```
 
 # Tree up to a number of layers
-```console
+```bash
 tree -L <max number of branches>
 ```
 
 # Compress zip
-```console
+```bash
 zip -r file.zip dir
 ```
 # Extract zip to a directory
-```console
+```bash
 unzip file.zip
 unzip file.zip -d <dir-name>
 ```
 
 # To Compress tar
-```console
+```bash
 tar -zcvf archive.tar.gz dir1 file1
 tar -jcvf archive.tar.bz2 dir1 file1
 ```
 
 # To Extract an archive
-```console
+```bash
 tar -xf archive.xz
 tar -zxvf archive.tar.gz
 tar -zxvf archive.tar.gz -C /path/to/dir/
@@ -125,13 +140,13 @@ tar -jxvf archive.tar.bz2 -C /path/to/dir/
 ```
 
 # To View/List an archive
-```console
+```bash
 tar -ztvf archive.tar.gz
 tar -jtvf archive.tar.bz2
 ```
 
 # To change permissions of files and directories
-```console
+```bash
 find /base/dir -type d -print0 | xargs -0 chmod 770
 find /base/dir -type f -print0 | xargs -0 chmod 660
 ```
@@ -145,31 +160,31 @@ Go to [jetBrains Mono](https://www.jetbrains.com/lp/mono/)
 Place the 'ttf' or 'otf' files on `~./local/share/fonts`
 
 # To check size of a directory
-```console
+```bash
 du -sh dir
 ```
 # To check your GPU usage
-```console
+```bash
 watch -n -1 nvidia-smi
 ```
 
 # Synchronization of dot files steps:
   1. Create a bare repository
-```console
+```bash
 git init --bare
 ```
   2. Create alias to sync your repo 
-```console
+```bash
 alias syncdf='/usr/bin/git --git-dir=/home/alfredo/projects/my_dotfiles \
 --work-tree=/home/alfredo'
 ```
   3. Do not show untracked files by default:
-```console
+```bash
 config config --local status.showUntrackedFiles no
 ```
 
 # Grep using process (ps) with header
-```console
+```bash
 ps -ef | egrep "process|PID"   
 ```
 
@@ -177,30 +192,28 @@ ps -ef | egrep "process|PID"
 
 ## After first install of arch-based distro
 Update the mirrors and keyring respectively by
-```console
+```bash
 sudo pacman -Syy
 sudo pacman -S archlinux-keyring
 ```
 
 ## Update and Sync pacman on Arch Linux
-```console
+```bash
 sudo pacman -Syu
 ```
 
 ## Remove unused repositories and not longer needed dependencies
-```console
+```bash
 sudo pacman -Sc
 ```
 To remove a package
-```console
+```bash
 sudo pacman -R <package>
 sudo pacman -Rcns <package>
 ```
 
-
-
 # Change keyboard layout using Xorg
-```console
+```bash
 setxkbmap br
 ```
 # Markdown conversion using pandoc
@@ -209,14 +222,14 @@ pandoc -s README.md -o output.pdf
 ```
 
 # Checking and clearing log files by up to time given or size
-```console
+```bash
 journalctl --disk-usage
 sudo journalctl --vacuum-time=2d
 sudo journalctl --vacuum-size=500M
 ```
 
 # Merge video files using ffmpeg
-```console
+```bash
 ffmpeg -f concat -safe 0 -i video_sequence.txt -c copy output.mp4
 ```
 Inside the `video_sequence.txt` one will have an structure like:
@@ -228,7 +241,7 @@ file 'third.mp4'
 
 # stow 
 To synch files and to remove symbolic links:
-```console
+```bash
 stow .
 stow -D .
 ```
@@ -239,60 +252,60 @@ Searching, find and replace, insertion or deletion. Use the -i option to write t
 Examples:
 
 ## To substitute every single X by Y in a file and write to the original file
-```console
+```bash
 sed -i "s/X/Y/g" <file>
 ```
 
 ## To remove a comment and whatever comes after in the comment
-```console
+```bash
 sed "s/#.*//g" <file>
 ```
 
 ## To remove spaces and other pattern use concatenation of substitutions with ;
-```console
+```bash
 sed "s/\s*#.*//g;s/X/Y/g" <file>
 ```
 
 ## Deletes all lines that are empty
-```console
+```bash
 sed "/^$/ d" <file>
 ```
 
 # Alternative to traceroute
-```console
+```bash
 tracepath google.com
 ```
 
 # Xandr
 To list displays change the scale and/or resolution
-```console
+```bash
 xrandr
 xandr --output DP-4 --scale 0.8x0.8
 export GDK_SCALE=2
 ```
 To see your dpi:
-```console
+```bash
 xrandr | grep -B 2 resolution
 ```
 To calculate the right dpi value
-```console
+```bash
 xrandr | grep -w connected
 ```
 
 Then divide your screen resolution by the dpi in mm x 10 / inches (2.54)
 E.g 1920 / (600 x 10 / 2.54) ~ 81  (new dpi value)
-```console
+```bash
 xrandr --dpi 81
 ```
 
 To enable and disable a monitor:
-```console
+```bash
 xrandr --output <DEVICE-ID> --auto
 xrandr --output <DEVICE-ID> --off
 ```
 
 To connect a second monitor, 3 steps:
-```console
+```bash
 xrandr --output <MAIN-monitor>  --primary
 xrandr --output <SECOND-monitor> --set audio force-dvi --mode 1920x1080
 xrandr --output <SECOND-monitor> --left-of <MAIN-monitor>
@@ -300,56 +313,56 @@ xrandr --output <SECOND-monitor> --right-of <MAIN-monitor>
 ```
 
 To place your second monitor virtually to the right:
-```console
+```bash
 xrandr --output <LEFT-monitor> --auto --output <RIGHTmonitor> --right-of <LEFTmonitor>
 ```
 
 To create modes using `xrandr`
-```console
+```bash
 xrandr --newmode <SETTINGS>
 xrandr --addmode <DISPLAY-name>
 ```
 
 # Change `sysrq` privileges
-```console
+```bash
 echo "1" | sudo tee /proc/sys/kernel/sysrq
 ```
 Please note that the following will NOT work:
 ```
-console
+bash
 echo "1" | sudo tee /proc/sys/kernel/sysrq
 ```
 
 # List your services by state
-```console
+```bash
 systemctl list-units --state=<state>
 ```
 
 # Check the battery of your laptop
 Using the binary `upower` you have two options:
-```console
+```bash
 upower -i $(upower -e | grep BAT) | grep --color=never -E "state|to\ full|to\ empty|percentage"
 upower -i /org/freedesktop/UPower/devices/battery_BAT1
 ```
 
 # Connect to `wifi` using the terminal and `nmcli` (Network Manager CLI)
 First check if the `wifi` is enabled:
-```console
+```bash
 nmcli radio wifi
 ```
 Check the `wifi` list:
-```console
+```bash
 nmcli dev wifi list
 ```
 Connect to the device:
-```console
+```bash
 sudo nmcli dev wifi connect <device> -a
 ```
 the flag is to prompt for any missing arguments (password for example)
 
 # Laptop screen brightness
 First check which type of backlight do you have:
-```console
+```bash
 ls /sys/class/backlight/
 cat /sys/class/backlight/<intel_backlight>/max_brightness
 echo <new-value> > /sys/class/backlight/intel_backlight/brightness
@@ -357,6 +370,6 @@ echo <new-value> > /sys/class/backlight/intel_backlight/brightness
 Then just change it using `sudo` privileges
 
 # Kitty Terminal Emulator themes:
-```console
+```bash
 kitty +kitten themes
 ```
