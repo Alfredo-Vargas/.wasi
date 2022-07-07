@@ -1,5 +1,6 @@
 ### Makes vi possible in your terminal where you see one line at the time
 set -o vi
+
 ###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
 export VISUAL='vim'
@@ -61,7 +62,6 @@ alias alf='cd ~/.config/slinks/mega_alfredo/'
 alias tab='cd ~/.config/slinks/mega_tabitha/'
 alias fd='fd -H'
 alias wiki='nvim /home/alfredo/projects/wiki'
-alias expresspush='sh /home/alfredo/projects/scripts/git_update.sh'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
