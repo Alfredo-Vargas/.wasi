@@ -1,53 +1,24 @@
-# To clone, checkout and use custom directory
-```console
-git clone <github-repo> -b <branch-name> <custom-directory>
-```
-# Stage and unstage
-```
-console
-git add -u
-git reset
-```
-
-# See all branches
-```console
-git branch -a
-```
-
-# To list branches and change to branch
-```console
-git branch
-git checkout <branch>
-```
-
-# Create and move to branch
-```console
-git checkout -b <stage>
-```
-
-# To push to remote
-```console
-git push origin <stage>
-```
-
-# To add submodule
-Within the main repo to another repo as submodule:
-```console
-git submodule add git@github.com:Alfredo-Vargas/wordle-test.git
-```
-By default any push or pull request will ignore this submodule
-To pull the submodules use:
-```console
-git pull --recurse-submodules
-```
-or after pull or clone update the submodule 
-```console
-git submodule update --init
-```
-or add the recursive module flag to it as follows
-```console
-git config submodule.recurse true
-```
-
-# To download a directory from a Github:
-Navigate to the URL [DownGit](https://downgit.github.io/#/home)
+# Some Git Commands
+- `git commit -a` : Stages files automatically
+- `git log -p` : Produces patch text
+- `git show` : Shows various objects
+- `git diff` : Is similar to the Linux `diff` command, and can show the differences in various commits
+- `git diff --staged` : An alias to --cached, this will show all staged files compared to the named commit
+- `git add -p` : Allows a user to interactively review patches to add to the current commit
+- `git git mv` : Similar to the Linux `mv` command, this moves a file
+- `git rm` : Similar to the Linux `rm` command, this deletes, or removes a file
+- `git show <commitID>` : To show an specific commit
+- `git -a -m <mesage>` : To add and commit in the same step:
+- `git config -l` : Check the current git configuration
+- `git clone <github-repo> -b <branch-name> <custom-directory>` : To clone, checkout and use custom directory
+- `git add -u` and `git reset` : Stage and unstage
+- `git branch -a` : see all branches
+- `git branch` and `git checkout <branch>` : To list branches and change to branch
+- `git checkout -b <stage>` : Create and move to branch
+- `git push origin <stage>` : to push to remote
+- `git submodule add git@github.com:Alfredo-Vargas/wordle-test.git` : to add sub-module within the main repo to another repo
+- `git pull --recursive-submodules` : by default any push or pull will ignore the sub-modules
+- `git submodule update --init` : after pull or clone update the sub-module 
+- `git config submodule.recurse true` : add the recursive module flag to it as follows
+- `git commit --amend` : allow us to modify and add changes to the most recent commit
+- To download a directory from a Github, then navigate to the URL [Download Git Directory](https://downgit.github.io/-/home)
