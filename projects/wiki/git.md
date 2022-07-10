@@ -1,7 +1,7 @@
 # Some Git Commands
 - `git commit -a` : Stages files automatically
 - `git log -p` : Produces patch text
-- `git show` : Shows various objects
+- `git show <commitID>` : Shows various objects
 - `git diff` : Is similar to the Linux `diff` command, and can show the differences in various commits
 - `git diff --staged` : An alias to --cached, this will show all staged files compared to the named commit
 - `git add -p` : Allows a user to interactively review patches to add to the current commit
@@ -21,4 +21,9 @@
 - `git submodule update --init` : after pull or clone update the sub-module 
 - `git config submodule.recurse true` : add the recursive module flag to it as follows
 - `git commit --amend` : allow us to modify and add changes to the most recent commit
+- `git revert HEAD` : creates a new commit with the latest reversed changes
+- `git revert <commitID>` : 
+
+# Some notes
+- The hash of the commits IDs are obtained using `SHA1`
 - To download a directory from a Github, then navigate to the URL [Download Git Directory](https://downgit.github.io/-/home)
