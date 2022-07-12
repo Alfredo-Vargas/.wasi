@@ -3,29 +3,30 @@ set -o vi
 
 ###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
+export IDE='nvim'
 export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='less'  # used for man pages!
 
-# # Make less output colorfull (usefull for man pages)
-# export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
-# # Start bold
-# export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
-# # Start stand out
-# export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
-# # End standout
-# export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-# # Start underline
-# export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
-# # End Underline
-# export LESS_TERMCAP_ue=$(tput sgr0)
-# # End bold, blinking, standout, underline
-# export LESS_TERMCAP_me=$(tput sgr0)
+# Make less output colorfull (usefull for man pages)
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# Start bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# Start stand out
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# End standout
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# Start underline
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# End Underline
+export LESS_TERMCAP_ue=$(tput sgr0)
+# End bold, blinking, standout, underline
+export LESS_TERMCAP_me=$(tput sgr0)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# PS1 and PS2 are override by starship (~/.config/starship.toml)
+# PS1 and PS2 are override by starship defaults or toml file
 # Starship configurations can be set up at ~/.config/starship.toml
 # PS1="\u@\h \W -> "
 # PS1="[\u@\h \W]\$ "
@@ -100,10 +101,6 @@ alias df='df -h'
 alias give-me-azerty-be="sudo localectl set-x11-keymap be"
 alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
 
-# pacman unlock
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
-
 # free
 alias free="free -mt"
 
@@ -125,44 +122,22 @@ alias upall="paru -Syu --noconfirm"
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
-# grub update
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
 # add new fonts
 alias update-fc='sudo fc-cache -fv'
-
-# copy/paste all content of /etc/skel over to home folder - backup of config created - beware
-alias skel='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
-# backup contents of /etc/skel to hidden backup folder in home/user
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 #switch between lightdm and sddm
 alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
 alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
-alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
-alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
-
-# kill commands
-# quickly kill conkies
-alias kc='killall conky'
-# quickly kill polybar
-alias kp='killall polybar'
-# quickly kill picom
-alias kpi='killall picom'
 
 #hardware info --short
 alias hw="hwinfo --short"
 
 #skip integrity check
 alias paruskip='paru -S --mflags --skipinteg'
-alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -216,22 +191,19 @@ alias jctl="journalctl -p 3 -xb"
 
 #nano for important configuration files
 #know what you do in these files
-alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
-alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
-alias npacman="sudo $EDITOR /etc/pacman.conf"
-alias ngrub="sudo $EDITOR /etc/default/grub"
-alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
-alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
-alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias narcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
-alias nsddm="sudo $EDITOR /etc/sddm.conf"
-alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
-alias nfstab="sudo $EDITOR /etc/fstab"
-alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
-alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
-alias nhosts="sudo $EDITOR /etc/hosts"
-alias nb="$EDITOR ~/.bashrc"
+alias vlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
+alias vpacman="sudo $EDITOR /etc/pacman.conf"
+alias vmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
+alias vmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
+alias varcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
+alias vsddm="sudo $EDITOR /etc/sddm.conf"
+alias vsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
+alias vfstab="sudo $EDITOR /etc/fstab"
+alias vnsswitch="sudo $EDITOR /etc/nsswitch.conf"
+alias vsamba="sudo $EDITOR /etc/samba/smb.conf"
+alias vgnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
+alias vhosts="sudo $EDITOR /etc/hosts"
+alias vb="$IDE ~/.bashrc"
 
 #gpg
 #verify signature for isos
