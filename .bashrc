@@ -7,28 +7,31 @@ export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='less'  # used for man pages!
 
-# Make less output colorfull (usefull for man pages)
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
-# Start bold
-export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
-# Start stand out
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
-# End standout
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-# Start underline
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
-# End Underline
-export LESS_TERMCAP_ue=$(tput sgr0)
-# End bold, blinking, standout, underline
-export LESS_TERMCAP_me=$(tput sgr0)
+# # Make less output colorfull (usefull for man pages)
+# export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# # Start bold
+# export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# # Start stand out
+# export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# # End standout
+# export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# # Start underline
+# export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# # End Underline
+# export LESS_TERMCAP_ue=$(tput sgr0)
+# # End bold, blinking, standout, underline
+# export LESS_TERMCAP_me=$(tput sgr0)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# PS1='[\u@\h \W]\$ '
-PS1="\W\$ " # so your username does not appear
+# PS1 and PS2 are override by starship (~/.config/starship.toml)
+# Starship configurations can be set up at ~/.config/starship.toml
+# PS1="\u@\h \W -> "
+# PS1="[\u@\h \W]\$ "
+# PS1="\W\$ " # so your username does not appear
 # PS2 is the secondary prompt
-export PS1;
+# export PS1;
 
 # Adding to env variable $PATH
 
@@ -43,6 +46,7 @@ fi
 if [ -d "$HOME/projects/scripts" ] ;
   then PATH="$HOME/projects/scripts:$PATH"
 fi
+
 
 ### Exports for Programs
 export PATH="$PATH:/home/alfredo/.cargo/bin"
@@ -66,11 +70,18 @@ alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
 # list
-alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -alFh'
-alias l='ls'
-alias l.="ls -A | egrep '^\.'"
+if exa -v exa &> /dev/null
+then
+  alias ls="exa -l"
+  alias la='exa -la'
+  alias ll='exa -alFh'
+  alias l='exa'
+else
+  alias ls='ls --color=auto'
+  alias la='ls -a'
+  alias ll='ls -alFh'
+  alias l='ls'
+fi
 # ip
 alias ip='ip --color=auto'
 
@@ -221,8 +232,6 @@ alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
 alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
 alias nhosts="sudo $EDITOR /etc/hosts"
 alias nb="$EDITOR ~/.bashrc"
-alias nz="$EDITOR ~/.zshrc"
-alias nf="EDITOR ~/.config/fish/config.fish"
 
 #gpg
 #verify signature for isos

@@ -1,5 +1,8 @@
 # Bash Scripting Notes
 
+## Some Bash Commands
+- `bash -x` : Diagnose of your `.bashrc`
+
 ## Bash Fundamentals
 - No spaces when declaring variables!
 - `$(command)` : prints the output of the **command** given to the current position

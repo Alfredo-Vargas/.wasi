@@ -13,7 +13,7 @@ window:
   decorations: none
 
 # Allow terminal applications to change Alacritty's window title.
-  dynamic_title: true
+  # dynamic_title: true
 
   padding:
     x: 2
