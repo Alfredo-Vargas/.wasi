@@ -1,24 +1,15 @@
-# To avoid typing sudo all the type when using docker commands:
-```
-console
-sudo usermod -aG docker <user>
-```
+# Docker commands
+- **First add yourself to the docker group**, this avoids to type `sudo` all the time in the consecutive commands
+- `sudo usermod -aG docker <username>`
+- `docker ps -a` : To list all containers
+- `docker stop <container-name>` : to stop a container
+- `docker container prune` : it will remove all stopped containers
+- `docker run -i -t --name=centos7_lab centos:latest /bin/bash`  : the flag `-i` is for interactive mode and the flag `-t` is for `tty` allocation
 
-# To list all running containers
-```console
-docker ps -a
-```
-
-# To start a docker container
-```console
-docker run -i -t --name=centos7_lab centos:latest /bin/bash
-```
-The flag `-i` stands for interactive mode
-The flag `-t` stands for `tty` allocation
-
-# To stop a docker container
-```console
-docker stop <container-name>
+- Example create a ubuntu container to practice ssh. The flag `-d` demonizes it. We share the home directory from the local system to the ubuntu container. Then we join the docker container
+```bash
+docker run -it -d --name sshpractice -v /home/alfredo:/home/alfredo ubuntu bash
+docker exec -it sshpractice bash
 ```
 
 # Docker permissions vs Host permissions
