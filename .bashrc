@@ -26,14 +26,6 @@ export LESS_TERMCAP_me=$(tput sgr0)
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# PS1 and PS2 are override by starship defaults or toml file
-# Starship configurations can be set up at ~/.config/starship.toml
-# PS1="\u@\h \W -> "
-# PS1="[\u@\h \W]\$ "
-# PS1="\W\$ " # so your username does not appear
-# PS2 is the secondary prompt
-# export PS1;
-
 # Adding to env variable $PATH
 
 if [ -d "$HOME/.bin" ] ;
