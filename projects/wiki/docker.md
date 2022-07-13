@@ -2,6 +2,7 @@
 - **First add yourself to the docker group**, this avoids to type `sudo` all the time in the consecutive commands
 - `sudo usermod -aG docker <username>`
 - `docker ps -a` : To list all containers
+- `docker commit <container-name>` : to make the container an image
 - `docker inspect <container-name>` : will give you all the information of the given container
 - `docker stop <container-name>` : to stop a container
 - `docker container prune` : it will remove all stopped containers

@@ -30,7 +30,7 @@ $line_break\
 $character"""
 
 # Don't print a new line at the start of the prompt
-add_newline = false
+add_newline = true
 
 [aws]
 format = '\[AWS: [$profile/($region)]($style)\]'
