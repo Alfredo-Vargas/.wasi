@@ -27,7 +27,8 @@ $aws \
 $env_var\
 $cmd_duration\
 $line_break\
-$character"""
+$character\
+$battery"""
 
 # Don't print a new line at the start of the prompt
 add_newline = true
@@ -156,7 +157,7 @@ disabled = true
 [jobs]
 disabled = true
 [battery]
-disabled = true
+disabled = false
 
 # Until these get resolved, doing my own datetime with date:
 # https://github.com/starship/starship/discussions/2360#discussioncomment-391911
