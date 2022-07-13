@@ -26,6 +26,5 @@ nnoremap <C-l> <C-w>l
 
 hi Normal guibg=NONE ctermbg=NONE
 set viminfo='20,<1000,s100 " prevents truncated yanks, deletes, etc (deprecated on neovim)
-set listchars=space:.,trail:.,eol:↲,tab:>>
 autocmd Filetype gitcommit setlocal spell texwidth=72
 

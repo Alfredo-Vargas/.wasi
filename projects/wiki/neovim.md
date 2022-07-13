@@ -21,6 +21,7 @@
 - `neovim -d <file1> <file2>` : to open two files in neovim using diff mode
 - `:g!/foo/d` : to delete lines which have the word "foo"
 - `:g/^\s*$/d` : to delete lines which are empty of have spaces
+- `'<,'>s/original/new/gc` :  asks for confirmation for each matching case
 
 ## Tabs
 - `<C-w-T` : open current buffer in a new tab

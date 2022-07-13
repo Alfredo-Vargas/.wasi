@@ -56,6 +56,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 if starship -V starship &> /dev/null
 then
   eval "$(starship init bash)"  # runs starship which uses bash
+else
+  PS1="[\u@\h \W]\$ "
+  export PS1;
 fi
 
 # ignore upper and lowercase when TAB completion
@@ -83,9 +86,9 @@ then
   alias l='exa'
 else
   alias ls='ls --color=auto'
-  alias la='ls -a'
-  alias ll='ls -alFh'
-  alias l='ls'
+  alias la='ls -a --color=auto'
+  alias ll='ls -alFh --color=auto'
+  alias l='ls --color=auto'
 fi
 # ip
 alias ip='ip --color=auto'
