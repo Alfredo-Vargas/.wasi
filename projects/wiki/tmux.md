@@ -1,53 +1,13 @@
-
-# Commands:
-  Prefix by default is '<C-b>' however in my case is '<C-t>'
-  * List sessions:
-  ```console
-    tmux ls
-  ```
-  * Attach to a session:
-  ```console
-    tmux attach-session -t <session>
-  ```
-
-  * Detach from session
-  ```console
-    prefix d
-  ```
-  * Show time
-  ```console
-    prefix t
-  ```
-
-  * Show numbers and jump to it (optional)
-  ```console
-    prefix q (number)
-  ```
-  
-  * Kill session
-  ```console
-    tmux kill-ses -t <session>
-  ```
-
-  * Show all sessions
-  ```console
-    prefix s
-  ```
-
-  * Move between windows
-  ```console
-    C-S (left,right)arrow
-  ```
-
-  * Move between sessions
-  ```console
-    prefix ()
-  ```
-
-  * Pick different layouts
-  ```console
-    prefix M-#  (1, 2, ...)
-  ```
-
-
-
+# `Tmux` Commands:
+- Prefix by default is '<C-b>' however in my case is '<C-t>'
+- `tmux ls` : to list sessions
+- `tmux attach-session -t <session-name>`
+- `prefix d` : to detach from a session
+- `prefix t` : to show time
+- `prefix :kill-session` : to close all panes and windows of current session. Kills current session
+- `prefix q` : to show pane numbers
+- `tmux kill-ses -t <session-name>` : kills a given session from detach mode
+- `prefix M-s` : list sessions when inside a session (remap from `tmux.conf`)
+- `prefix C-S-Left|Right` : move between windows
+- `prefix (|)` : to move between sessions
+- `prefix M-# (1, 2, ...)` : to pick a different layout
