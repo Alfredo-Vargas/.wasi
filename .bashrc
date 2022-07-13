@@ -109,6 +109,9 @@ alias wget="wget -c"
 
 # userlist
 alias userlist="cut -d: -f1 /etc/passwd"
+# grouplist
+alias grouplist="cut -d: -f1 /etc/group"
+
 
 # Aliases for software managment
 alias pacman='sudo pacman --color auto'
