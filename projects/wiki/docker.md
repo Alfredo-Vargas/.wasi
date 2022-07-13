@@ -2,6 +2,7 @@
 - **First add yourself to the docker group**, this avoids to type `sudo` all the time in the consecutive commands
 - `sudo usermod -aG docker <username>`
 - `docker ps -a` : To list all containers
+- `docker inspect <container-name>` : will give you all the information of the given container
 - `docker stop <container-name>` : to stop a container
 - `docker container prune` : it will remove all stopped containers
 - `docker run -i -t --name=centos7_lab centos:latest /bin/bash`  : the flag `-i` is for interactive mode and the flag `-t` is for `tty` allocation

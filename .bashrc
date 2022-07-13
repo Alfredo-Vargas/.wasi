@@ -50,9 +50,13 @@ fi
 
 
 ### Exports for Programs
-export PATH="$PATH:/home/alfredo/.cargo/bin"
-# export PATH="$PATH:/home/alfredo/.local/share/gem/ruby/3.0.0/bin"
-eval "$(starship init bash)"  # runs starship which uses bash
+export PATH="$PATH:$HOME/.cargo/bin"
+# export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
+# Cross-shell propmt starship detection and configuration
+if starship -V starship &> /dev/null
+then
+  eval "$(starship init bash)"  # runs starship which uses bash
+fi
 
 # ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
@@ -66,7 +70,7 @@ alias sm='cd ~/.config/slinks/summer_slink'
 alias alf='cd ~/.config/slinks/mega_alfredo/'
 alias tab='cd ~/.config/slinks/mega_tabitha/'
 alias fd='fd -H'
-alias wiki='nvim /home/alfredo/projects/wiki'
+alias wiki='nvim $HOME/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 
@@ -269,10 +273,10 @@ __conda_setup="$('/home/alfredo/.config/miniconda3/bin/conda' 'shell.bash' 'hook
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/.config/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/.config/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/alfredo/.config/miniconda3/bin:$PATH"
+        export PATH="$HOME/.config/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
