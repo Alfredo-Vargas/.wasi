@@ -1,3 +1,4 @@
+
 # Interesting Notes
 - `[` and `]` both are binaries UNIX systems! That is the reason that in bash scripts that symbol must be have spaces around
 # Typing Symbols Name
@@ -41,8 +42,9 @@ C-s
 C-q
 ```
 
-## TEE: read from  stdin and write to stdout and files
+## TEE: read from  `stdin` and write to `stdout` and files
 - `echo "yo" | tee path/to/file`
+- `ls /usr/bin | tee ls.txt | grep zip`
 
 ## AWK: Aho, Weinberger, and Kernighan Command
 - Program that has the following structures, by default the separator is the space:
