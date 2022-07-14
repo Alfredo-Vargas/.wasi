@@ -1,3 +1,30 @@
+# Interesting Notes
+- `[` and `]` both are binaries UNIX systems! That is the reason that in bash scripts that symbol must be have spaces around
+# Typing Symbols Name
+- `/` Slash or Wack
+- `\` Backslash or back wack
+- `!` Bang or Exclamation Point
+- `:` Colon
+- `;` Semicolon
+- `|` Bar or Pipe
+- `^` Carrot
+- `*` Splat, Star or Asterix
+- `-` Dash or hyphen
+- `_` Underscore
+- `~` Tilde or Squiggle
+- `=` Equals
+- `+` Plus
+- `#` Hashtag or Octothorp
+- `''` Single quotes
+- `""` Double quotes
+- \`\` Backticks
+- `@` at sign
+- `&` Ampersand
+- `[]` Square brackets
+- `{}` Curly Brackets
+- `<>` Angle Brackets
+- `()` Parenthesis
+
 # Some Linux terminal useful options:
 - `setfont ter-132n` : makes your font bigger for your current terminal session
 
@@ -96,4 +123,14 @@ echo "Hi" | tee file
 ```
 with flag -a appends instead of whole substitution
 
+## How to remove a file name `-`
+```bash
+touch ./-
+rm ./-
+```
 
+## Terminal Bombs
+- Dangerous do not ever type in your terminal:
+```bash
+:(){ :|:& };;
+```

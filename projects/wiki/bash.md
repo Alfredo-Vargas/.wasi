@@ -1,5 +1,27 @@
 # Bash Scripting Notes
 
+## Command structure in bash
+```bash
+command -options arguments
+```
+
+## Globing in bash
+- Can be enable using the shell option command `shopt`
+```bash
+shopt -s globstar
+shopt -s dotglob
+```
+
+## Ranges in bash
+- `Data???` : any file beginning with "Data" followed by exactly three characters
+- `[abc]*` : any file that begins with either "a", "b" or "c"
+- `BACKUP.[0-9][0-9][0-9]` : any file that begins with backup and following exactly three numerals
+- `[[:upper:]]*` : any file beginning with an upper case letter
+- `[![:digit:]]*` : any file **not** beginning with a numeral
+- `*[[:lower:]123]` : any file ending with lowercase letter or the numerals 1, 2 or 3
+
+- Options are settings of the command and arguments are input to the command
+
 ## Exit Code Number
 - `1` : Catchall for general errors
 - `2` : Misuse of shell `builtins` according to Bash documentatio 

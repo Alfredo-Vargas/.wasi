@@ -1,15 +1,3 @@
-## Software Package Managers
-### Debian Package Manager
-  * `apt`
-  * `dpkg`
-### RedHat Package Manager
-  * `yum`
-### Arch User
-### SUSE
-  * `yast`
-### GUIX
-### Brew
-
 # Exit Status in Linux
 - The environment variable `$?` return the exit status of the last command which can return:
   - `0` when everything is OK
