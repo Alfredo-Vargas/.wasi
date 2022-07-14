@@ -1,8 +1,19 @@
+## Software Package Managers
+### Debian Package Manager
+  * `apt`
+  * `dpkg`
+### RedHat Package Manager
+  * `yum`
+### Arch User
+### SUSE
+  * `yast`
+### GUIX
+### Brew
+
 # Exit Status in Linux
 - The environment variable `$?` return the exit status of the last command which can return:
   - `0` when everything is OK
   - `1` when an error occurred
-
 
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)

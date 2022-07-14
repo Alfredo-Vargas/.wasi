@@ -68,3 +68,72 @@ for logfile in /var/log/*log; do
   cut =d' ' -f5- $logfile | sort | uniq -c | sort -nr | head -5
 done
 ```
+
+## Special Characters
+### Comment Character (Octothorp)
+- Comment char `#` requires a space to be read properly. See example with no space and space:
+```bash
+echo "A comment will follow." # Comment here.
+#                            ^ Note whitespace before #
+```
+- Comments may be embedded within a pipe:
+```bash
+initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
+# Delete lines containing '#' comment character.
+           sed -e 's/\./\. /g' -e 's/_/_ /g'` )
+# Excerpted from life.sh script
+```
+- Base conversion
+```bash
+echo $(( 2#101011 ))
+```
+
+### Command separator (Semicolon)
+- Require a white space before inserting the next command
+```bash
+echo hello; echo there
+
+if [ -x "$filename" ]; then    #  Note the space after the semicolon.
+#+                   ^^
+  echo "File $filename exists."; cp $filename $filename.bak
+else   #                       ^^
+  echo "File $filename not found."; touch $filename
+fi; echo "File test complete."
+```
+- Terminator in case option (switch-like). Substitute `;` for `;&` for Bash version of $4+$
+```bash
+case "$variable" in
+  abc) echo "\$variable = abc" ;;
+  xyz) echo "\$variable = xyz" ;;
+esac
+```
+
+### Dot Command (period)
+- `. .bashrc` : equivalent to source
+- Denotes current working directory, prefixes hidden files, refers to parent directory if used twice
+
+### Quoting
+- `("...")` : partial quoting or weak quoting, does not interfere with variable substitution
+- `('...')` : full quoting or strong quoting, the variable names are used literally
+
+### Comma Operator (comma)
+- Links together a series of arithmetic operations, but only last one is returned
+```bash
+let "t2 = ((a = 9, 15 / 3))"
+# Set "a = 9" and "t2 = 15 / 3"
+```
+- Also used to concatenate strings
+```bash
+for file in /{,usr/}bin/*calc
+#             ^    Find all executable files ending in "calc"
+#+                 in /bin and /usr/bin directories.
+do
+        if [ -x "$file" ]
+        then
+          echo $file
+        fi
+done
+```
+
+# References
+1. [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html)
