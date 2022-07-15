@@ -19,6 +19,10 @@ shopt -s dotglob
 - `[[:upper:]]*` : any file beginning with an upper case letter
 - `[![:digit:]]*` : any file **not** beginning with a numeral
 - `*[[:lower:]123]` : any file ending with lowercase letter or the numerals 1, 2 or 3
+- Nice directory creation using range
+```bash
+mkdir {2007..2009}-{01-12}
+```
 
 - Options are settings of the command and arguments are input to the command
 
@@ -84,6 +88,12 @@ done
 ```
 
 ### For loop
+- Using brace expansions
+- `for i in {a..z}; do echo $i; done` : inline for loop
+- `for i in {01..10}; do echo prefix$i; done` : inline for loop
+- `for i in {1..$RANDOM}; do echo $i; done`
+- `for site in gmail images; do dig +short $site.google.com; done`
+- Iterate over files on a given directory
 ```bash
 for logfile in /var/log/*log; do
   echo "Processing: $logfile"
@@ -156,6 +166,13 @@ do
         fi
 done
 ```
+
+# Esoteric and dangerous things in bash
+- The following command produces two files one in `/tmp/` named `some stupid` and another in the relative path named `filename`. The `f` the `\f` just scapes the `f` producing a regular f
+```bash
+touch /tmp/some\ stupid \filename
+```
+- `ls | xxd` to troubleshoot filenames with weird names
 
 # References
 1. [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html)
