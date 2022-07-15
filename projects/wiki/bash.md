@@ -167,6 +167,10 @@ do
 done
 ```
 
+### Freshly learned Commands to record your command actions
+- `asciinema` and `script` : to record your current set of commands
+- `wall` : to send messages to all users on the system
+
 # Esoteric and dangerous things in bash
 - The following command produces two files one in `/tmp/` named `some stupid` and another in the relative path named `filename`. The `f` the `\f` just scapes the `f` producing a regular f
 ```bash
