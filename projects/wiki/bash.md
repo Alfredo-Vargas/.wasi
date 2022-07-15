@@ -1,5 +1,27 @@
 # Bash Scripting Notes
 
+## Tips
+- You can use the command **wait** and it waits all `bg` jobs. There is no need to specify the `PID` when one needs to wait for all jobs.
+- So instead of doing the following:
+```bash
+for pid in ${pids[*]}; do
+  wait $pid
+done
+```
+- Do just
+```bash
+wait
+```
+- Use functions instead of aliases
+- `export -f <function-name>` : to export functions
+
+## Functions
+- Use functions instead of aliases
+```bash
+greet() { echo "Hello $1"; }
+greet junior
+```
+
 ## Command structure in bash
 ```bash
 command -options arguments

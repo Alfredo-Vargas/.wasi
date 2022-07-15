@@ -11,3 +11,4 @@
 - `prefix C-S-Left|Right` : move between windows
 - `prefix (|)` : to move between sessions
 - `prefix M-# (1, 2, ...)` : to pick a different layout
+- `prefix w` : to show current windows

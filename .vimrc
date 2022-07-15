@@ -1,3 +1,4 @@
+set -o vi
 syntax on
 filetype plugin indent on
 set fileencoding=utf-8

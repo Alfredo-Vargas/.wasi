@@ -3,6 +3,18 @@
   - `0` when everything is OK
   - `1` when an error occurred
 
+# Control Signals
+- `C-s` : will suspend the process
+- `C-q` : will resume the process
+- `C-c` : stop process - sends an interrupt signal
+
+# Process Search
+- Use pager and search to find a process that contains `string` in its name
+```bash
+pstree | $PAGER
+/string
+```
+
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
@@ -37,7 +49,7 @@ ldd /usr/bin/sddm | grep libpam.so
 ```
 
 
-#Update fonts on system
+# Update fonts on system
 ```bash
 fc-cache -f -v
 ```
