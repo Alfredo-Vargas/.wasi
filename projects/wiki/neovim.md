@@ -1,5 +1,9 @@
 # Several Vim/Neovim Commands
 
+## Some Concepts/Definitions
+- `so %` : to source your current `.vimrc` when changing options
+- `%` : means current buffer
+
 ## Go commands
 - `gqq` : Makes a paragraph by inserting `CR` to making a paragraph not to have lines longer than 80 chars.
 - `guu` : Makes the line uncapitalized.

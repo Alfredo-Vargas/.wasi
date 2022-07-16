@@ -40,6 +40,14 @@ if [ -d "$HOME/projects/scripts" ] ;
   then PATH="$HOME/projects/scripts:$PATH"
 fi
 
+[ -z "$OS" ] && export OS=`uname`
+case "$OS" in
+  Linux)  export PLATFORM=linux ;;
+  *indows*)  export PLATFORM=windows ;;
+  FreeBSD|Darwin)  export PLATFORM=mac ;;
+  *)  export PLATFORM=unknown ;;
+esac
+
 
 ### Exports for Programs
 export PATH="$PATH:$HOME/.cargo/bin"
