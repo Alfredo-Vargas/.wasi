@@ -13,12 +13,14 @@ done
 wait
 ```
 - Use functions instead of aliases
-- `export -f <function-name>` : to export functions
+- `export -f <function-name>` : to export functions. The export function takes a variable or function and makes it available to other child processes. Anything that is not exported is not available to other subprocesses for many reasons including security
+- **export** works for function using the `bash` interpreter and not the `sh` interpreter
+- when using export functions on vi or vim, make sure that the environment that the current vi or vim session has as parent a shell which supports export functions, e.g. **bash**
 
 ## Functions
 - Use functions instead of aliases
 ```bash
-greet() { echo "Hello $1"; }
+greet() { echo "Hello $1" ; }  # Carefully place the spaces around!
 greet junior
 ```
 

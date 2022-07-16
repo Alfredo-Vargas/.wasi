@@ -1,3 +1,8 @@
+# Using vi mode
+set -o vi
+# Export some env variables
+export SHELL='bash'
+
 # To support the git prompt functionality
 # source ~/.git-prompt.sh
 function uptimeinfo {
