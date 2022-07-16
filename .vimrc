@@ -40,3 +40,8 @@ inoremap <up> <NOP>
 inoremap <down> <NOP>
 inoremap <left> <NOP>
 inoremap <right> <NOP>
+
+
+" read personal/private vim configuration (keep last to override)
+" set rtp^=~/.vimpersonal
+" set rtp^=~/.vimprivate
