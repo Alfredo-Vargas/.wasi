@@ -6,6 +6,7 @@
 - The function export functionality allowed the `Shellshock/Bashdoor` disaster, which affected millions of computers: [shellshock](https://en.wikipedia.org/wiki/Shellshock_(software_bug))
 - The bug caused Bash to unintentionally execute commands when the commands are concatenated to the end of **functions definitions** stored in the values of **environment variables**
 - Do not abuse the usage of bash function on environment variables
+- Do not expect floating point operations in bash. Bash does not support it
 
 ## Tips
 - You can use the command **wait** and it waits all `bg` jobs. There is no need to specify the `PID` when one needs to wait for all jobs.
