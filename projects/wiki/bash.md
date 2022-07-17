@@ -1,5 +1,12 @@
 # Bash Scripting Notes
 
+## Notes
+
+- Export function in environment variables are considered bash hacks. Some people considered that are not good practice
+- The function export functionality allowed the `Shellshock/Bashdoor` disaster, which affected millions of computers: [shellshock](https://en.wikipedia.org/wiki/Shellshock_(software_bug))
+- The bug caused Bash to unintentionally execute commands when the commands are concatenated to the end of **functions definitions** stored in the values of **environment variables**
+- Do not abuse the usage of bash function on environment variables
+
 ## Tips
 - You can use the command **wait** and it waits all `bg` jobs. There is no need to specify the `PID` when one needs to wait for all jobs.
 - So instead of doing the following:
@@ -12,6 +19,16 @@ done
 ```bash
 wait
 ```
+- Use parenthesis for command substitutions instead of backticks. Backticks cannot be nested and are harder to see
+```bash
+echo "Use better \$(date): $(date)"
+echo "Rather than \`date\`: $(date)"
+```
+- Use the math operator whenever possible
+```bash
+echo "one plus one is $((1 + 1))"
+```
+- Use double quotes around your echos to print the newline characters
 
 ## When to use what
 - `Aliases` only supported by interactive shells
