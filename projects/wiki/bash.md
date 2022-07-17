@@ -12,6 +12,19 @@ done
 ```bash
 wait
 ```
+
+## When to use what
+- `Aliases` only supported by interactive shells
+- `Exported function` only supported by bash
+- `POSIX script` when we want to share or run from anything
+- `Bash script` when more than `POSIX` is required but no enough to compile
+- `Node script` when JSON manipulation or web-centric operation are required
+- `Python script` when automation, ML, or math-intensive operations are required
+- `Go program` when compilation is required
+- `Rust program` when compilation without garbage collection is required
+- `C program` when finely tuned, low-level compilation is required
+- `Assembly code` when ultra low-level compilation is required
+
 - Use functions instead of aliases
 - `export -f <function-name>` : to export functions. The export function takes a variable or function and makes it available to other child processes. Anything that is not exported is not available to other subprocesses for many reasons including security
 - **export** works for function using the `bash` interpreter and not the `sh` interpreter

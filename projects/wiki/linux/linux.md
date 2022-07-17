@@ -1,3 +1,7 @@
+# Some General concepts
+- `uname -a` : check system information
+- `file <file-name>` : gives file information (e.g. compiled binaries are ELF 64-bit)
+
 # Exit Status in Linux
 - The environment variable `$?` return the exit status of the last command which can return:
   - `0` when everything is OK
