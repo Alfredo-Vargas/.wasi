@@ -6,7 +6,7 @@
 
 ## Go commands
 - `gqq` : Makes a paragraph by inserting `CR` to making a paragraph not to have lines longer than 80 chars.
-- `guu` : Makes the line uncapitalized.
+- `guu` : Makes the line `uncapitalized`.
 - `gUU` : Makes the line capitalized
 - `~` : Changes capitalization of single letter.
 - `g~` : Changes capitalization of single line.
@@ -82,7 +82,7 @@ nvim ~/.local/share/nvim/site/pack/packer/start/darkplus.nvim/lua/darkplus/confi
 - `TransparentToggle` : to toggle transparency on and off
 
 ## Allow the adapter to attach to the run-in-terminal
-- Yama is a linux security module. Depending on the settings it ensures that a process cannot access the memory/state of another process. That's usually a good thing, but for debuggin can get in the way. 
+- Yama is a linux security module. Depending on the settings it ensures that a process cannot access the memory/state of another process. That's usually a good thing, but for debugging can get in the way. 
 - [Yama](https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html)
 Quick Fix:
 ```
