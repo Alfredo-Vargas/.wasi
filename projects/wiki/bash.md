@@ -1,7 +1,7 @@
 # Bash Scripting Notes
 
 ## Notes
-
+- Primitive types in bash: Strings, numbers and booleans
 - Export function in environment variables are considered bash hacks. Some people considered that are not good practice
 - The function export functionality allowed the `Shellshock/Bashdoor` disaster, which affected millions of computers: [shellshock](https://en.wikipedia.org/wiki/Shellshock_(software_bug))
 - The bug caused Bash to unintentionally execute commands when the commands are concatenated to the end of **functions definitions** stored in the values of **environment variables**
