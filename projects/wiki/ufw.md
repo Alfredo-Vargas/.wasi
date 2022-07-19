@@ -23,3 +23,7 @@
   ```bash
   sudo ufw loggin off
   ```
+  6. Check which ports are open an try to reduce the attack surface by closing some unnecessary pots
+  ```bash
+  sudo lsof -i -P -n | grep LISTEN
+  ```

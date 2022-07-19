@@ -34,6 +34,12 @@ pstree | $PAGER
 2. The terminal forwarding the port (ssh session) has to be kept open during the whole operation
 3. The port forwarding terminal will not generate any output message to prompt that operation was successful (due to the `-N` flag)
 
+## SSH Server
+- `/etc/ssh/sshd_config` : is the ssh configuration file of the ssh service
+- `sshd -t` : to restart the service to ensure a clean start, _valid configurations produce no output_
+- `/etc/services` : to check the port numbers currently assigned on the server. Change the default $22$ for another one e.g. $34666$
+- `sudo systemctl status sshd|ssh.service` : to check the last login attempts
+
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
