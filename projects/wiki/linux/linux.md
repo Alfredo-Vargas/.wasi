@@ -19,6 +19,21 @@ pstree | $PAGER
 /string
 ```
 
+# SSH Fundamentals
+- `ssh -NL 1234:localhost:1234 username@xx.xx.xx.xx` : flag `-N` indicates to not execute remote command which is useful when `-L` the flag for port forwarding is also enabled. Any network request from your current system `1234` will be forwarded to `localhost:1234` on the remote system
+- `ssh -NL 1234:localhost:1234 -i /path/to/private_key`
+## SSH Access to a remote Jupyter Lab server
+1. `ssh <remote-user>@<remote-host>` : ssh into the server
+2. `jupyter lab --no-browser --port <port-number>` : start jupyter lab on the remote server without an interface declaring a port
+3. `ssh -N -L localhost:<local-port>:localhost:<remote:port> <remote-user>@<remote-host>` : from the local computer establish port forwarding. Again here `-N` suppress execution of a remote command and `-L` binds remote port to local port
+4. `http://localhost:<local-port>` : access the `URL` from your local web browser
+5. `jupyter server list` : on the server side execute the command to show the URLs running servers with their tokens 
+6. Authenticate using the given token
+### Notes
+1. The terminal running Jupyter Lab in the remote system has to be kept open. Alternatively one could run Jupyter Lab on the background
+2. The terminal forwarding the port (ssh session) has to be kept open during the whole operation
+3. The port forwarding terminal will not generate any output message to prompt that operation was successful (due to the `-N` flag)
+
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
