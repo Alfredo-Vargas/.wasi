@@ -40,6 +40,17 @@ pstree | $PAGER
 - `/etc/services` : to check the port numbers currently assigned on the server. Change the default $22$ for another one e.g. $34666$
 - `sudo systemctl status sshd|ssh.service` : to check the last login attempts
 
+## Log SSH
+- `journalctl -u sshd | tail -n 100` : to log the `sshd` activities
+- Examples of failed login attempts:
+  1. `Jul 20 15:19:45 remotehostname sshd[8988]: Unable to negotiate with <IP> port <PORT>: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]` 
+    - Whenever an attempt is tried through a wrong port
+  2. `Jul 20 15:23:46 remotehostname sshd[9421]: Connection reset by authenticating user trexuser <IP> port <PORT> [preauth]`
+    - Whenever the user and port matched but authentication failed
+- Examples of successful logins
+  1. `Jul 20 15:38:50 remotehostname sshd[10292]: Accepted publickey for flyinguser from 192.168.1.12 port 39754 ssh2: <ENCRYPTTYPE>:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+  2. `Accepted publickey for <username> from <given_ip_address> port <PORT> ssh2:<ENCRYPTTYPE>:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+ 
 # Printer Installation on Arc with KDE Plasma
 - Source of this instructions are from: [cups arch wiki](https://wiki.archlinux.org/title/CUPS)
 - First you need to install.
