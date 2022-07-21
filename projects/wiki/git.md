@@ -51,6 +51,8 @@
 - `git log --graph or git log --graph --oneline` : to visualize the merging of branches
 
 ## Remote Repository
+- `git branch -M main` : to set the branch name as main
+- `git push -u origin 'main'` : to push the branch main to the remote repo
 - By default the remote repository has the name **origin**
 - `git remote -v` : shows the remote repositories for fetch and push (they **can** used HTTP and HTTPS respectively)
 - `git remote show origin` : show the remote repository details
