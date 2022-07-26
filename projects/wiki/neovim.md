@@ -1,5 +1,11 @@
 # Several Vim/Neovim Commands
 
+## Windows and Buffers
+- `:new` : gets you a new horizontal buffer, similar to `C-w-s` but without repeating the same buffer
+- `:vnew` : gets you a new vertical buffer, similar to `C-w-v` but without repeating the same buffer
+- `:echo nvim_get_current_buf()` : gives the current buffer number in **neovim**
+- `:echo buffer_number()` : gives the current buffer number in **vim**
+
 ## Some Concepts/Definitions
 - `so %` : to source your current `.vimrc` when changing options
 - `%` : means current buffer
@@ -16,13 +22,17 @@
 - `gJ` : Joins selected lines without spaces.
 - `g&` : Make last substitution global.
 
-## Interesting commands
+## Hex mode magic wand
 - `:%!xxd` : view a text file in hex mode
 - `:%!xxd -r` : change view back from hex mode
 - `echo "this is a test" | nvim -` : makes neovim to read from stdin
+
+## Diff Command
 - `:windo diffthis` : to make a diff of the two buffers opened in a window
 - `:diffoff` : to close a diff of the two buffers opened in a window
 - `neovim -d <file1> <file2>` : to open two files in neovim using diff mode
+
+## Delete lines
 - `:g!/foo/d` : to delete lines which have the word "foo"
 - `:g/^\s*$/d` : to delete lines which are empty of have spaces
 - `'<,'>s/original/new/gc` :  asks for confirmation for each matching case
