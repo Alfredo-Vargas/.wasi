@@ -1,7 +1,7 @@
-## Check GPU info
-```console
-sudo lshw -C display
-```
+# NVIDIA and CUDA related commands on LINUX
+- `sudo lshw -C display` : shows the display hardware or GPU info
+- `nvidia-smi` : launches the System Management Interface command line tool
+
 ## Check GPU usage
 ```console
 watch -n -1 nvidia-smi

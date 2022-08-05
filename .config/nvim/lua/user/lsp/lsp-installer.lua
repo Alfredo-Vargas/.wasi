@@ -93,6 +93,12 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
   end
 
+  if server == "clangd" then
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.offsetEncoding = { "utf-16" }
+    require("lspconfig").clangd.setup({ capabilities = capabilities })
+  end
+
   lspconfig[server].setup(opts)
 end
 
