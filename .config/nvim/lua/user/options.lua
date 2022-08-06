@@ -3,6 +3,7 @@ local options = {
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  colorcolumn = "80",                      -- classic length while coding
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
@@ -52,6 +53,7 @@ vim.opt.fillchars:append {
 }
 
 vim.opt.shortmess:append "c"
+vim.opt.listchars={space = '.', tab = '>~', eol='↵'}
 
 for k, v in pairs(options) do
   vim.opt[k] = v

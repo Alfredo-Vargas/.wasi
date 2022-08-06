@@ -1,0 +1,13 @@
+On "keymaps.lua" activate:
+-- Insert --
+-- Press jk fast to enter
+vim.keymap.set("i", "jk", "<ESC>")
+
+On options.lua
+vim.opt.listchars={space = '.', tab = '>~', eol='↵'}
+
+Commented the plugins that are not working properly:
+-- require "user.sniprun"
+
+Comment the lines that give trouble on winbar
+and let's go!
