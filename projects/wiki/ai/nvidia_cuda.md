@@ -1,6 +1,10 @@
 # NVIDIA and CUDA related commands on LINUX
 - `sudo lshw -C display` : shows the display hardware or GPU info
 - `nvidia-smi` : launches the System Management Interface command line tool
+- `nvcc` : is the nvidia cuda compiler
+- [nvcc documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+- [flags options for nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list)
+- a
 
 ## Check GPU usage
 ```console
