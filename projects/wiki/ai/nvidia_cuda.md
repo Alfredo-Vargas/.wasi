@@ -8,7 +8,6 @@
 
 - [nvcc documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
 - [flags options for nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list)
-- a
 
 ## Check GPU usage
 ```console
