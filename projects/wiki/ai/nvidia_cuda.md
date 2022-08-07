@@ -1,7 +1,11 @@
 # NVIDIA and CUDA related commands on LINUX
 - `sudo lshw -C display` : shows the display hardware or GPU info
-- `nvidia-smi` : launches the System Management Interface command line tool
-- `nvcc` : is the nvidia cuda compiler
+- `which nvcc` : to check if the nvidia cuda compiler is installed
+- `nvcc --version` : to get the CUDA compiler version which matches the toolkit version:
+- `cat /proc/driver/nvidia/version` : check the CUDA version by using the kernel
+- `nvidia-smi` : launches the System Management Interface command line tool provides all the above info
+
+
 - [nvcc documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
 - [flags options for nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list)
 - a
