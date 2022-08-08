@@ -8,6 +8,7 @@
 - `prefix c` : to create a new window in `tmux`
 - `prefix d` : to detach from a session
 - `prefix [` : get you in `tmux`  visual mode, then use `y` to yank/copy the selection
+- `q` : to leave from visual mode
 - `prefix ]` : to paste from `tmux` visual mode to any other pane or window
 - `prefix t` : to show time
 - `prefix x` : to close pane

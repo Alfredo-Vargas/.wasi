@@ -1,4 +1,5 @@
 # Some Git Commands
+- `git rm -r --cached .` : clean the cache whenever are untracked files
 - `git log -p` : Produces patch text
 - `git diff` : Is similar to the Linux `diff` command, and can show the differences in various commits
 - `git add -p` : Allows a user to interactively review patches to add to the current commit
