@@ -59,6 +59,8 @@
 - `git remote show origin` : show the remote repository details
 - `git branch -r` : show the branches of the remote repository
 - `git push --delete origin <remote-branch-name>` : removes a remote branch
+- `git remote add origin <URL-ssh-based>` : to add a remote origin of your repo
+- `git remote remove origin` : to remove a remote origin of your repo
 
 ## Rebase
 - Allows to change the base commit of a branch on a three-way merge situation and changing it linear so now a Forward Merge takes place. _This overwrites the commit history!_
