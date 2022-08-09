@@ -38,4 +38,8 @@ sudo pacman -S cuda
 conda install cudatoolkit
 conda install cudnn
 ```
+3. Install `cuda-tools` to have access to Nsight Systems and another tools:
+```console
+sudo pacman -S cuda-tools
+```
 
