@@ -1,10 +1,20 @@
 # NVIDIA and CUDA related commands on LINUX
+
 - `sudo lshw -C display` : shows the display hardware or GPU info
 - `which nvcc` : to check if the nvidia cuda compiler is installed
 - `nvcc --version` : to get the CUDA compiler version which matches the toolkit version:
 - `cat /proc/driver/nvidia/version` : check the CUDA version by using the kernel
 - `nvidia-smi` : launches the System Management Interface command line tool provides all the above info
+- Compilation example using `nvcc` and to run it automatically:
+```console
+nvcc -arch=sm_61 -o <output_path/filename> <input_path/file.cu> -run
+```
 
+## NSight Systems NSYS
+
+- The source documentation can be found [here](https://docs.nvidia.com/nsight-systems/UserGuide/index.html#example-nsys-stats)
+- `nsys profile --stats=true <executable>` : will create a sqlite and a nsys-rep file reports
+- `nsys stats report1.nsys-rep` : will open in text mode the report
 
 - [nvcc documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
 - [flags options for nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list)

@@ -8,7 +8,11 @@ if not dap_ui_status_ok then
   return
 end
 
--- dapui.setup()
+
+-- require('dap-python').setup('/usr/bin/python')
+require('dap-python').setup('/home/alfredo/.config/miniconda3/envs/advcode-2021/bin/python')
+-- require('dapui').setup()
+
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
