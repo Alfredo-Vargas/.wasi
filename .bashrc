@@ -76,6 +76,11 @@ alias fd='fd -H'
 alias wiki='nvim $HOME/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+# alias s="systemctl"
+# alias j='journalctl -xe'
 
 # list
 if exa -v exa &> /dev/null
