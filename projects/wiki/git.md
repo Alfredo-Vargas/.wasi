@@ -49,7 +49,7 @@
 - `git merge <another-branch>` : to merge our current branch to another-branch. Then both branches are pointed to the same commit
 - When merging conflicts occur manually delete the extra chars on every conflict file and resolve manually the conflicts. Then use git add.
 - `git merge --abort` : will stop the merge and reset the files to the previous commit before any merge ever happened
-- `git log --graph or git log --graph --oneline` : to visualize the merging of branches
+- `git log --graph or git log --graph --oneline` : shows git history and helps to visualize the merging of branches
 
 ## Remote Repository
 - `git branch -M main` : to set the branch name as main
