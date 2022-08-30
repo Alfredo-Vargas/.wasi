@@ -27,6 +27,7 @@ keymap("n", "<m-h>", "<C-w>h", opts)
 keymap("n", "<m-j>", "<C-w>j", opts)
 keymap("n", "<m-k>", "<C-w>k", opts)
 keymap("n", "<m-l>", "<C-w>l", opts)
+keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Tabs --
 keymap("n", "<m-t>", ":tabnew %<cr>", opts)
@@ -64,7 +65,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

@@ -30,6 +30,7 @@ local blue = "#569CD6"
 local green = "#6A9955"
 local cyan = "#4EC9B0"
 local orange = "#CE9178"
+local indent = "#CE9178"
 local yellow = "#DCDCAA"
 local yellow_orange = "#D7BA7D"
 local purple = "#C586C0"
@@ -38,14 +39,15 @@ if lualine_scheme == "darkplus_dark" then
   -- gray = "#3e3e3e"
   gray = "#303030"
   dark_gray = "#303030"
-  red = "#D16969"
-  blue = "#569CD6"
-  green = "#6A9955"
-  cyan = "#4EC9B0"
-  orange = "#CE9178"
+  red = "#bf616a"
+  blue = "#5e81ac"
+  indent = "#A3BE8C"
+  green = "#A3BE8C"
+  cyan = "#88c0d0"
+  orange = "#C68A75"
   yellow = "#DCDCAA"
   yellow_orange = "#D7BA7D"
-  purple = "#C586C0"
+  purple = "#B48EAD"
 end
 
 local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
@@ -57,22 +59,22 @@ vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = dark_gray, bold = 
 vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
 vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
 vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
-vim.api.nvim_set_hl(0, "SLIndent", { fg = orange, bg = gray })
-vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = sl_hl.background })
+vim.api.nvim_set_hl(0, "SLIndent", { fg = indent, bg = gray })
+vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = sl_hl.background })
-vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = sl_hl.background, italic = true })
-vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = sl_hl.background })
-vim.api.nvim_set_hl(0, "SLWarning", { fg = "#D7BA7D", bg = sl_hl.background })
-vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = sl_hl.background })
+vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "NONE", italic = true })
+vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLWarning", { fg = "#D7BA7D", bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = "NONE" })
 
 local hl_str = function(str, hl)
   return "%#" .. hl .. "#" .. str .. "%*"
 end
 
 local mode_color = {
-  n = "#519fdf",
-  i = "#c18a56",
+  n = blue,
+  i = orange,
   v = "#b668cd",
   [""] = "#b668cd",
   V = "#b668cd",
@@ -80,19 +82,19 @@ local mode_color = {
   -- c = '#D7BA7D',
   c = "#46a6b2",
   no = "#D16D9E",
-  s = "#88b369",
-  S = "#c18a56",
-  [""] = "#c18a56",
-  ic = "#d05c65",
+  s = green,
+  S = orange,
+  [""] = orange,
+  ic = red,
   R = "#D16D9E",
-  Rv = "#d05c65",
-  cv = "#519fdf",
-  ce = "#519fdf",
-  r = "#d05c65",
+  Rv = red,
+  cv = blue,
+  ce = blue,
+  r = red,
   rm = "#46a6b2",
   ["r?"] = "#46a6b2",
   ["!"] = "#46a6b2",
-  t = "#d05c65",
+  t = red,
 }
 
 local left_pad = {

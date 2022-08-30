@@ -56,7 +56,7 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
@@ -126,7 +126,8 @@ run = "./install.sh" }
 
   -- Color
   use "NvChad/nvim-colorizer.lua"
-  use "ziontee113/color-picker.nvim"
+  -- use "ziontee113/color-picker.nvim"
+  use "nvim-colortils/colortils.nvim"
 
   -- Colorschemes
   use "lunarvim/onedarker.nvim"
@@ -150,10 +151,10 @@ run = "./install.sh" }
 
   -- Debugging
   use "mfussenegger/nvim-dap"
-  use "rcarriga/nvim-dap-ui"
-  use "theHamsta/nvim-dap-virtual-text"
-  use "Pocco81/DAPInstall.nvim"
-  use 'mfussenegger/nvim-dap-python'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use "mfussenegger/nvim-dap-python"
+  -- use "theHamsta/nvim-dap-virtual-text"
+  -- use "Pocco81/DAPInstall.nvim"
 
   -- Tabline
   -- use "akinsho/bufferline.nvim"
@@ -174,7 +175,8 @@ run = "./install.sh" }
 
   -- Comment
   use "numToStr/Comment.nvim"
-  use "folke/todo-comments.nvim"
+  -- use "folke/todo-comments.nvim"
+  use "B4mbus/todo-comments.nvim"
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
