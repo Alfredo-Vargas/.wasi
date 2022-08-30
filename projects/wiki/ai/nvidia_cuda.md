@@ -12,6 +12,7 @@ nvcc -arch=sm_61 -o <output_path/filename> <input_path/file.cu> -run
 
 ## NSight Systems NSYS
 
+- `nsys-ui` : to launch it download and install Nsight Systems from [Nvidia Developer Download Center](https://developer.nvidia.com/gameworksdownload#?dn=nsight-systems-2022-3). Do not confuse with Nvidia Nsight Graphics
 - The source documentation can be found [here](https://docs.nvidia.com/nsight-systems/UserGuide/index.html#example-nsys-stats)
 - `nsys profile --stats=true <executable>` : will create a sqlite and a nsys-rep file reports
 - `nsys stats report1.nsys-rep` : will open in text mode the report
