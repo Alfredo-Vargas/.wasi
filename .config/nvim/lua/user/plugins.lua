@@ -152,6 +152,7 @@ run = "./install.sh" }
   -- Debugging
   use "mfussenegger/nvim-dap"
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use "rcarriga/nvim-dap-ui"
   use "mfussenegger/nvim-dap-python"
   -- use "theHamsta/nvim-dap-virtual-text"
   -- use "Pocco81/DAPInstall.nvim"
