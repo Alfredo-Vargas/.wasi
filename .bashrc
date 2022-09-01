@@ -66,7 +66,8 @@ bind "set completion-ignore-case on"
 
 
 ### ALIASES ###
-alias skeys='nvim $HOME/projects/my_shortcuts.md'
+alias kdek='nvim $HOME/projects/kde_shortcuts.md'
+alias vimk='nvim $HOME/projects/vim_shortcuts.md'
 alias cvim='cd ~/.config/slinks/nvim_config/'
 alias scripts="cd $HOME/.wasi/projects/scripts/"
 alias tm='cd ~/.config/slinks/thomas_more_dir/'

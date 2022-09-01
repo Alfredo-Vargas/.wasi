@@ -1,5 +1,3 @@
-## Neovim IDE
-
 ## KDE Plasma Shortcuts
 ### View
 - `Meta + F8` : show desktop grid
@@ -7,6 +5,7 @@
 - `Meta + Control + Alt` : Attention
 - `Meta + F6` : Center Cursor
 - `Alt + F3` : show window menu
+---
 ### Move
 - `C #` : moves to desktop with number #
 - `Meta + #` : moves to the activity with number #
@@ -14,6 +13,7 @@
 - `Meta + Control + Shift + arrow` : move window between desktops
 - `Meta + D` : toggle show desktop windows
 - `Meta + Control + Esc` : Kill Window
+---
 ### Bismuth Layouts
 - `Meta + Shift + F` : toggle floating mode
 - `Meta + M` : toggle monocle layout
@@ -23,6 +23,3 @@
 - `Meta + Control + C` : toggle three column layout
 - `Meta + Control + D` : toggle spread layout
 - `Meta + Control + Z` : toggle stair layout
-
-
-## Neovim
