@@ -8,10 +8,14 @@
 - `F7` : TS Under Cursor
 - `F8` : TS Playground
 ---
+### Vim Magic Wands
+- `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
+- `%!xdd` : to see the hex values of current buffer
+- `%!xdd -r` : to change back from hex back to text values of current buffer
+---
 ### Vim Commands
 - `:term` : to open a terminal in a buffer not in pop up window
 - `C-0` : opens terminal in a pop up window
-- `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
 - `A-t` : open current buffer in a new Tab
 - `g-T` : to switch Tabs
 - `A-y` : close Tabs
