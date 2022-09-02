@@ -1,12 +1,5 @@
--- vim.api.nvim_create_autocmd({ "User" }, {
---   pattern = { "AlphaReady" },
---   callback = function()
---     vim.cmd [[
---       set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
---     ]]
---   end,
--- })
-
+-- For event triggger description check: `help: event`
+-- Welcome screen when opening nvim
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
@@ -16,6 +9,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
   end,
 })
 
+-- To handled closing buffers of the following buffer FileType
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
     "Jaq",
@@ -38,6 +32,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- To handle closing of Just Another Quickrun (Jaq) small windows (check jaq neovim github)
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "Jaq" },
   callback = function()
@@ -49,6 +44,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- To handle navigation or closing of an empty buffer with no filetype
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = { "" },
   callback = function()
@@ -64,6 +60,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
+-- To get the project directory name when entering a new buffer
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = { "" },
   callback = function()
@@ -78,6 +75,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
+-- Change height when opening a term and start using the buffer
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = { "term://*" },
   callback = function()
@@ -87,6 +85,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
+-- Mind the text wrap and spelling when dealing with gitcommit and markdow filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown" },
   callback = function()
@@ -95,6 +94,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- To handle the numbering during the opening of lir (simple file explorer) check lir neovim github
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "lir" },
   callback = function()
@@ -103,6 +103,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- For NvimTree with win number == 1. Is it possible to write it using the neovim api?
 vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
 --   callback = function()
@@ -112,43 +113,50 @@ vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTre
 --   end,
 -- })
 
+-- No feedback when resizing the window
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
     vim.cmd "tabdo wincmd ="
   end,
 })
 
+-- Whenever we enter a window?
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   callback = function()
     vim.cmd "quit"
   end,
 })
 
+-- Whenever a buffer is reloaded
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"
   end,
 })
 
+-- Visual effect whenever yanking text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
   end,
 })
 
+-- Not sure about this lsp action but let's include python to see what it does
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.java" },
+  pattern = { "*.java", "*.py" },
   callback = function()
     vim.lsp.codelens.refresh()
   end,
 })
 
+-- After all vim configs are loaded this callback will be executed
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
   callback = function()
     vim.cmd "hi link illuminatedWord LspReferenceText"
   end,
 })
 
+-- After a buffer is displayed in a window, run checktime to warn you if the file is open more than once
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
@@ -156,6 +164,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- To be run whenever the cursor is hold for the runtime specified
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
   callback = function()
     local status_ok, luasnip = pcall(require, "luasnip")
@@ -181,6 +190,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 --   end,
 -- })
 
+-- To autoformat whenever a typescript file is written
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "*.ts" },
   callback = function()

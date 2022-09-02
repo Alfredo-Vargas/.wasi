@@ -9,6 +9,8 @@
 - `F8` : TS Playground
 ---
 ### Vim Commands
+- `:term` : to open a terminal in a buffer not in pop up window
+- `C-0` : opens terminal in a pop up window
 - `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
 - `A-t` : open current buffer in a new Tab
 - `g-T` : to switch Tabs
