@@ -26,13 +26,21 @@ if server == "clangd" then
   opts = vim.tbl_deep_extend("force", clangd_opts, opts)
 end
 ```
-then add `clangd.lua` to location: `nvim/lua/user/lsp/settings/clangd.lua`, where the `filetype` **cuda** was changed to **cu**
-```
+then add `clangd.lua` to location: `nvim/lua/user/lsp/settings/clangd.lua`, these are the defaults
+```lua
 return {
   cmd = { "clangd" },
-  filetypes = { "c", "cpp", "objc", "objcpp", "cu" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   single_file_support = { true },
 }
+```
+finally on `handlers.lua` add the following encoding to the client capabilities:
+```lua
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- to fix the encoding when using clangd
+-- should be nice to handle encoding capabilities per lsp server?
+M.capabilities.offsetEncoding = { "utf-16" }  
 
 ```
 

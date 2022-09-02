@@ -2,6 +2,10 @@ local M = {}
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
+-- to fix the encoding when using clangd
+-- should be nice to handle encoding capabilities per lsp server?
+M.capabilities.offsetEncoding = { "utf-16" }
+
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
   return

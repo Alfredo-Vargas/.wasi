@@ -10,6 +10,18 @@ end
 
 -- dapui.setup()
 -- require('dap-python').setup('/home/alfredo/.config/miniconda3/envs/advcode-2021/bin/python')
+-- require('dap-cuda').setup('/opt/cuda/bin/nvcc')
+
+dap.configurations.cuda = {
+  type = 'cuda',
+  request = 'launch',
+  name = "Launch file",
+  program = "${file}",
+  cudaPath = '/opt/cuda/bin/nvcc',
+}
+
+-- require('dap.cuda').setup('/opt/cuda/bin/nvcc')
+
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {

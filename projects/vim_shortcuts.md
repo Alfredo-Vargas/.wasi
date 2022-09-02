@@ -15,6 +15,8 @@
 - `A-t` : open current buffer in a new Tab
 - `g-T` : to switch Tabs
 - `A-y` : close Tabs
+- `ZZ` : to save buffer if modified and quit vim. Alternative `:x`
+- `ZQ` : to quit vim without saving buffer modifications
 ---
 ### Git Related
 - `A-g` : show git branches
