@@ -12,6 +12,7 @@
 - `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
 - `%!xdd` : to see the hex values of current buffer
 - `%!xdd -r` : to change back from hex back to text values of current buffer
+- `set fileencoding` : to check the file encoding of current buffer
 ---
 ### Vim Commands
 - `:term` : to open a terminal in a buffer not in pop up window
