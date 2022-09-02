@@ -19,6 +19,23 @@ vim.opt.listchars={space = '.', tab = '>~', eol='↵'}
 -- require "user.sniprun"
 ```
 ---
+* Add server detection for `clangd` to `mason.lua` (location: `nvim/lua/user/lsp/mason.lua`)
+```lua
+if server == "clangd" then
+  local clangd_opts = require "user.lsp.settings.clangd"
+  opts = vim.tbl_deep_extend("force", clangd_opts, opts)
+end
+```
+then add `clangd.lua` to location: `nvim/lua/user/lsp/settings/clangd.lua`, where the `filetype` **cuda** was changed to **cu**
+```
+return {
+  cmd = { "clangd" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cu" },
+  single_file_support = { true },
+}
+
+```
+
 * Comment the lines that give trouble on `winbar.lua`
 * comment on `lualine.lua` the line where `StatusLineSeparator` is called which is not previously defined
 * comment the trouble lines on `winbar.lua` (navic\_text lines)
