@@ -5,7 +5,8 @@ set -o vi
 export EDITOR='vim'
 export IDE='nvim'
 export VISUAL='vim'
-export HISTCONTROL=ignoreboth:erasedups
+# export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignoreboth
 export PAGER='less'  # used for man pages!
 
 # Make less output colorfull (usefull for man pages)
@@ -78,6 +79,45 @@ alias fd='fd -H'
 alias wiki='nvim $HOME/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
+export _lynx=$(which lynx)
+
+# lynx() {
+# 	if [[ -z "$_lynx" ]]; then
+# 		telln "Doesn't look like $(lynx) is installed."
+# 		return 1
+# 	fi
+# 	[[ -r ~/.config/lynx/lynx.cfg ]] && lynxcfg="-cfg=$HOME/.config/lynx/lynx.cfg"
+# 	[[ -r ~/.config/lynx/lynx.lss ]] && lynxlss="-lss=$HOME/.config/lynx/lynx.cfg"
+# 	$_lynx $lynxcfg $lynxlss "$*"
+# } && export -f lynx
+
+# urlencode () {
+#   declare str-"$*"
+#   declare encoded=""
+#   declare i c x
+#   for (( i=0; i<${#str}; i++ )); do
+#     c=${str:$i:1}
+#     case "$c" in
+#       [-_.~a-zA-Z0-9] ) x="$c" ;;
+#       * ) printf -v x '%%%02x' "'$c" ;;
+#     esac
+#     encoded+="$x"
+#   done
+#   echo "$encoded"
+# }
+
+# duck () {
+#   declare url=$(urlencode "$*")
+#   lynx "https://duckduckgo.com/lite?q=$url"
+# }
+# alias "?"=duck
+
+# google () {
+#   declare url=$(urlencode "$*")
+#   lynx "https://google.com/search?q=$url"
+# }
+# alias "??"=google
+
 # alias rm='rm -i'
 # alias cp='cp -i'
 # alias mv='mv -i'
