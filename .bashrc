@@ -52,6 +52,8 @@ esac
 
 ### Exports for Programs
 export PATH="$PATH:$HOME/.cargo/bin"
+export GOPATH=$HOME/go
+export PATH="$PATH:$HOME/go/bin"
 # export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 # Cross-shell propmt starship detection and configuration
 if starship -V starship &> /dev/null
@@ -147,6 +149,9 @@ alias cd..='cd ..'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+## Colorize the output of tree command
+alias tree='tree -C'
 
 # readable output
 alias df='df -h'
