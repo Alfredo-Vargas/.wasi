@@ -1,4 +1,3 @@
-
 # Interesting Notes
 - `[` and `]` both are binaries UNIX systems! That is the reason that in bash scripts that symbol must be have spaces around
 # Typing Symbols Name
@@ -41,6 +40,9 @@ while true; do echo hello; sllep 1' dome
 C-s
 C-q
 ```
+
+## Other Commands
+- `head --lines <number> <file>` to print the first n-lines of a file
 
 ## TEE: read from  `stdin` and write to `stdout` and files
 - `echo "yo" | tee path/to/file`

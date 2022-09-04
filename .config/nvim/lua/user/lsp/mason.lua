@@ -21,6 +21,7 @@ local servers = {
   "tflint",
   "terraformls",
   "tsserver",
+  "gopls",
   "pyright",
   "yamlls",
   "bashls",
