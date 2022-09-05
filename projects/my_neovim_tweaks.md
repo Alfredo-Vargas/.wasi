@@ -44,6 +44,34 @@ M.capabilities.offsetEncoding = { "utf-16" }
 
 ```
 
+- For Perl LSP, modify `mason.lua`
+```lua
+lcal servers = {
+    ...
+    "perlnavigator",
+    ...
+  }
+...
+if server == "perlnavigator" then
+  local perl_opts = require("user.lsp.settings.perlnavigator")
+  opts = vim.tbl_deep_extend("force", perl_opts, opts)
+end
+```
+and add `settings/perlnavigator.lua`:
+```lua
+return {
+  settings = {
+    perlnavigator = {
+      perlPath = 'perl',
+      perltidyProfile = '',
+      perlcriticProfile = '',
+      perlcriticEnabled = true
+    },
+  },
+}
+
+```
+
 * Comment the lines that give trouble on `winbar.lua`
 * comment on `lualine.lua` the line where `StatusLineSeparator` is called which is not previously defined
 * comment the trouble lines on `winbar.lua` (navic\_text lines)
@@ -52,3 +80,4 @@ M.capabilities.offsetEncoding = { "utf-16" }
 * comment `autocommands.lua` to have an idea of what each `autocommand` does
 
 **and let's go!**
+

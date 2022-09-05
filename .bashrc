@@ -81,8 +81,8 @@ alias fd='fd -H'
 alias wiki='nvim $HOME/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
-export _lynx=$(which lynx)
 
+# export _lynx=$(which lynx)
 # lynx() {
 # 	if [[ -z "$_lynx" ]]; then
 # 		telln "Doesn't look like $(lynx) is installed."
