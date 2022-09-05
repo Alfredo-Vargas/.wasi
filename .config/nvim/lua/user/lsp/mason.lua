@@ -22,6 +22,7 @@ local servers = {
   "terraformls",
   "tsserver",
   "gopls",
+  "perlnavigator",
   "pyright",
   "yamlls",
   "bashls",
@@ -65,6 +66,11 @@ for _, server in pairs(servers) do
   }
 
   server = vim.split(server, "@")[1]
+
+  if server == "perlnavigator" then
+    local perl_opts = require("user.lsp.settings.perlnavigator")
+    opts = vim.tbl_deep_extend("force", perl_opts, opts)
+  end
 
   if server == "clangd" then
     local clangd_opts = require "user.lsp.settings.clangd"
