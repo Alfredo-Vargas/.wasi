@@ -9,12 +9,14 @@ conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas tenso
 ```
 
 - `conda install -c conda-forge jupyterthemes` : seems that is not working.
+- Nice `onedarkpro` theme can be found [here](https://github.com/johnnybarrels/jupyterlab_onedarkpro)
 
 ## Plugins to Jupyterlab
 
 ```console
 conda install -c conda-forge theme-darcula jupyerlab_vim jupyerlab-lsp jedi-language-server
 ```
+- `conda install -c conda-forge python-lsp-server` : seems an alternative to jedi-language-server
 
 ## Verify installation and update conda to current version
 
