@@ -5,6 +5,8 @@
 - `git diff` : Is similar to the Linux `diff` command, and can show the differences in various commits
 - `git add -p` : Allows a user to interactively review patches to add to the current commit
 - `git config -l` : Check the current git configuration
+- `git config -global user.email <yourgithubuseremail>` : set your git name globally
+- `git config -global user.name <yourgithubusername>` : set your git email globally
 
 ## Cloning
 
@@ -13,6 +15,8 @@
 
 ## Staging
 
+- `git add -A .` : to add everything recursively in current directory to git
+- `git status` : to show the state of files in git
 - `git add -u` : to stage
 - `git reset` : to unstage
 - `git diff --staged` : An alias to --cached, this will show all staged files compared to the named commit
