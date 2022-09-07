@@ -15,6 +15,10 @@
 
 ---
 
+### Plugins related
+
+- `siw<char>` : to surround inner word by the passed char
+
 ### Vim Magic Wands
 
 - `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
