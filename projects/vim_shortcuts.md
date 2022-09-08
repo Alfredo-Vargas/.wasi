@@ -18,6 +18,7 @@
 ### Plugins related
 
 - `siw<char>` : to surround inner word by the passed char
+- `<C-z>` : to go to zen mode
 
 ### Vim Magic Wands
 
@@ -51,6 +52,8 @@
 
 ### Buffer Manipulation/Navigation
 
+- `U` : changes to uppercase the selection
+- `u` : changes to lowercase the selection
 - `Q` : close current buffer
 - `zz` : center cursor in current buffer
 - `zt` : places cursor to the top of current buffer

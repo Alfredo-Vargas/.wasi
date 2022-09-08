@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #location of the txt file of usernames
 userfile=./userlist.txt

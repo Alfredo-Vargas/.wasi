@@ -10,19 +10,26 @@ export HISTCONTROL=ignoreboth
 export PAGER='less'  # used for man pages!
 
 # Make less output colorfull (usefull for man pages)
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+LESS_TERMCAP_mb=$(tput bold; tput setaf 2)  # green
+export LESS_TERMCAP_mb
 # Start bold
-export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+export LESS_TERMCAP_md
 # Start stand out
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+export LESS_TERMCAP_so
 # End standout
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_se
 # Start underline
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+export LESS_TERMCAP_us
 # End Underline
-export LESS_TERMCAP_ue=$(tput sgr0)
+LESS_TERMCAP_ue=$(tput sgr0)
+export LESS_TERMCAP_ue
 # End bold, blinking, standout, underline
-export LESS_TERMCAP_me=$(tput sgr0)
+LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_me
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -72,7 +79,7 @@ bind "set completion-ignore-case on"
 alias kdek='nvim $HOME/projects/kde_shortcuts.md'
 alias vimk='nvim $HOME/projects/vim_shortcuts.md'
 alias cvim='cd ~/.config/slinks/nvim_config/'
-alias scripts="cd $HOME/.wasi/projects/scripts/"
+alias scripts='cd $HOME/.wasi/projects/scripts/'
 alias tm='cd ~/.config/slinks/thomas_more_dir/'
 alias sm='cd ~/.config/slinks/summer_slink'
 alias alf='cd ~/.config/slinks/mega_alfredo/'
@@ -81,6 +88,22 @@ alias fd='fd -H'
 alias wiki='nvim $HOME/projects/wiki'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
+# alias htb='$HOME/.wasi/projects/scripts/hextobin.sh'
+# alias btd='\$HOME/.wasi/projects/scripts/bintodec.sh'
+
+htb() {
+
+  htb_script="$HOME/.wasi/projects/scripts/hextobin.sh"
+  $htb_script "$1"
+
+} && export -f htb
+
+btd() {
+
+  btd_script="$HOME/.wasi/projects/scripts/bintodec.sh"
+  $btd_script "$1"
+
+} && export -f btd
 
 # export _lynx=$(which lynx)
 # lynx() {

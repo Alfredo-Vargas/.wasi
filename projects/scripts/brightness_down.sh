@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 STEP=2
 BASE=10

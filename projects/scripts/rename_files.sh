@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Renames the file names listed in the source file "original_names.txt"
 # The renaming requires a prefix and a file extension

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 xsetroot -name "$(date +'%b, %d %H:%M')"
 sleep 5
