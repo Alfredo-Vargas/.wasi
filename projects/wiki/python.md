@@ -2,6 +2,20 @@
 
 ###### By Alfredo Vargas.
 
+# F-Strings (min version Python 3.6)
+
+- To print in hex, octal, scientific notation a number
+```python
+number = 800
+print(f"The number is {number:x}")  # hex value
+print(f"The number is {number:o}")  # octal value
+print(f"The number is {number:e}")  # scientific notation
+print(f"The number is {number:06}") # to pad with zeros until 6 digits is reached
+print(f"The number is {number:.2f}") # to print up to two decimal places
+print(f"The price is {44000000000:,.2f}") # to print with separator
+print(f"The percentage is {0.34567:.2%}") # to print the percentage
+```
+
 # Pipe using bash and python scripts/commands
 
 - `cat haiku.txt | ./capitalize.py` : where one uses `sys.stdin` in python.
