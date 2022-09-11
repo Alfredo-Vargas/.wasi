@@ -13,7 +13,7 @@ set textwidth=73
 set linebreak
 
 set relativenumber
-set norelativenumber
+" set norelativenumber
 set nocompatible
 set number
 
