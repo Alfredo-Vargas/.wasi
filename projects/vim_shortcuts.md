@@ -20,20 +20,23 @@
 - `siw<char>` : to surround inner word by the passed char
 - `<C-z>` : to go to zen mode
 
-### Vim Magic Wands
+### Vim Magic Wands or Buffer Insertions
 
+- `:r !ls` : puts the output of the `ls` command on the current buffer
 - `!!` : use the magic wand with whatever binary script whose output you wanna put inside current buffer
 - `%!xdd` : to see the hex values of current buffer
 - `%!xdd -r` : to change back from hex back to text values of current buffer
-
-### Vim Retrieve Info from current buffer
-
-- `set fileencoding` : to check the file encoding of current buffer
+- `:r <filename>` : to insert the contents of the given filename in the current buffer
 
 ---
 
 ### Vim Commands
 
+- `di<char>` : delete all inside of that is surrounded by `<char>`
+- `:'<,'>w <newfile>` : to save selection to a new file
+- `set fileencoding` : to check the file encoding of current buffer
+- `<C-g>` : to see current file info and cursor position
+- `a`
 - `:term` : to open a terminal in a buffer not in pop up window
 - `C-0` : opens terminal in a pop up window
 - `A-t` : open current buffer in a new Tab
