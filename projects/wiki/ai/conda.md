@@ -6,6 +6,7 @@
 conda create -n <my-env> -c conda-forge python jupyerlab numpy matplotlib
 conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas scikit-learn
 conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas tensorflow
+conda create -n <my-env> -c conda-forge python pytest pytest-cov
 ```
 
 - `conda install -c conda-forge jupyterthemes` : seems that is not working.
