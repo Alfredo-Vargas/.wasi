@@ -152,7 +152,6 @@ run = "./install.sh" }
   -- Debugging
   use "mfussenegger/nvim-dap"
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-  use "rcarriga/nvim-dap-ui"
   use "mfussenegger/nvim-dap-python"
   -- use "theHamsta/nvim-dap-virtual-text"
   -- use "Pocco81/DAPInstall.nvim"
@@ -176,8 +175,7 @@ run = "./install.sh" }
 
   -- Comment
   use "numToStr/Comment.nvim"
-  -- use "folke/todo-comments.nvim"
-  use "B4mbus/todo-comments.nvim"
+  use "folke/todo-comments.nvim"
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
@@ -245,6 +243,7 @@ run = "./install.sh" }
   }
 
   -- Graveyard
+  -- use "B4mbus/todo-comments.nvim"
   -- use "romgrk/nvim-treesitter-context"
   -- use "mizlan/iswap.nvim"
   -- use {'christianchiarulli/nvim-ts-rainbow'}
