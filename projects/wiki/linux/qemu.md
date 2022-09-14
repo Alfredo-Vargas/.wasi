@@ -1,5 +1,5 @@
 # NAT default set to  active
-Create the directory (if not exists) and the following path:
+Create the directory (if not exists or if net-start default is not yet set up) and the following path:
 ```console
 cd /usr/share/libvirt/networks
 sudo vim default.xml
@@ -132,6 +132,3 @@ sudo mount -t virtiofs /fromhost /host/share/dir
 ```console
 sudo qemu-img convert -f vdi -O qcow2 /path/to/virtualbox.vdi /path/to/store/new.qcow2
 ```
-
-
-

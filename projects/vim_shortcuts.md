@@ -1,5 +1,23 @@
 ## VI, VIM, NVIM Commands
 
+### Vim Commands
+
+- `:set paste` : to turn off `autoindent` when you paste code
+- `:set nopaste` : to turn off paste mode and allow `autoindent` work correctly
+- `di<char>` : delete all inside of that is surrounded by `<char>`
+- `:'<,'>w <newfile>` : to save selection to a new file
+- `set fileencoding` : to check the file encoding of current buffer
+- `<C-g>` : to see current file info and cursor position
+- `:term` : to open a terminal in a buffer not in pop up window
+- `C-0` : opens terminal in a pop up window
+- `A-t` : open current buffer in a new Tab
+- `g-T` : to switch Tabs
+- `A-y` : close Tabs
+- `ZZ` : to save buffer if modified and quit vim. Alternative `:x`
+- `ZQ` : to quit vim without saving buffer modifications
+
+---
+
 ### LSP related
 
 - `A-k` : show LSP lines
@@ -30,22 +48,6 @@
 
 ---
 
-### Vim Commands
-
-- `di<char>` : delete all inside of that is surrounded by `<char>`
-- `:'<,'>w <newfile>` : to save selection to a new file
-- `set fileencoding` : to check the file encoding of current buffer
-- `<C-g>` : to see current file info and cursor position
-- `a`
-- `:term` : to open a terminal in a buffer not in pop up window
-- `C-0` : opens terminal in a pop up window
-- `A-t` : open current buffer in a new Tab
-- `g-T` : to switch Tabs
-- `A-y` : close Tabs
-- `ZZ` : to save buffer if modified and quit vim. Alternative `:x`
-- `ZQ` : to quit vim without saving buffer modifications
-
----
 
 ### Git Related
 
