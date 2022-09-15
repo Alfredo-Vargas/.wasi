@@ -13,6 +13,7 @@
 - `Meta + Control + Shift + arrow` : move window between desktops
 - `Meta + D` : toggle show desktop windows
 - `Meta + Control + Esc` : Kill Window
+- `Meta + A + k` : Switch Keyboard Layouts
 ---
 ### Bismuth Layouts
 - `Meta + Shift + F` : toggle floating mode
