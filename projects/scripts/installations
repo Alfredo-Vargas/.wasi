@@ -6,7 +6,7 @@ pacman -S shfmt shellcheck
 # Applications in KDE Plasma Wayland
 pacman -S git base-devel alacritty tmux vi vim ttf-nerd-fonts-symbols spectacle keepassxc okular firefox time stow 
 pacman -S gwenview celluloid python-pip ripgrep flake8 fortune-mod wl-clipboard rsync fd lshw bind exa hwinfo docker
-pacman -S shfmt shellcheck
+pacman -S shfmt shellcheck inetutils
 
 # For Null-ls
 npm install -g eslint
