@@ -7,7 +7,11 @@ conda create -n <my-env> -c conda-forge python jupyerlab numpy matplotlib
 conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas scikit-learn
 conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas tensorflow
 conda create -n <my-env> -c conda-forge python pytest pytest-cov
+conda create -n <my-env> -c fastai python opencv-python
 ```
+
+- NOTE: `opencv-python-headless` does not include GUI support
+- NOTE: `conda` does not contain `opencv-contrib-python`, use pip install instead
 
 - `conda install -c conda-forge jupyterthemes` : seems that is not working.
 - Nice `onedarkpro` theme can be found [here](https://github.com/johnnybarrels/jupyterlab_onedarkpro)
