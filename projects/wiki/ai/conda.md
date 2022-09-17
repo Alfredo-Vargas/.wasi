@@ -19,7 +19,7 @@ conda create -n <my-env> -c fastai python opencv-python
 ## Plugins to Jupyterlab
 
 ```console
-conda install -c conda-forge theme-darcula jupyerlab_vim jupyerlab-lsp jedi-language-server
+conda install -c conda-forge theme-darcula jupyterlab_vim jupyterlab-lsp jedi-language-server
 ```
 - `conda install -c conda-forge python-lsp-server` : seems an alternative to jedi-language-server
 
