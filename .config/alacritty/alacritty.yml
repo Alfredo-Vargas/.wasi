@@ -10,7 +10,7 @@ window:
   dimensions:
     columns: 84
     lines: 25
-  decorations: none
+  decorations: full
 
 # Allow terminal applications to change Alacritty's window title.
   # dynamic_title: true
