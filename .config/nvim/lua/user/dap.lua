@@ -9,7 +9,7 @@ if not dap_ui_status_ok then
 end
 
 -- dapui.setup()
-require('dap-python').setup('/home/alfredo/.config/miniconda3/envs/advcode-2021/bin/python')
+require('dap-python').setup('/home/alfredo/.config/miniconda3/envs/opencv-intro/bin/python')
 -- require('dap-cuda').setup('/opt/cuda/bin/nvcc')
 
 dap.configurations.cuda = {
