@@ -8,6 +8,7 @@ conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas sciki
 conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas tensorflow
 conda create -n <my-env> -c conda-forge python pytest pytest-cov
 conda create -n <my-env> -c fastai python opencv-python-headless scikit-image
+conda create -n <my-env> -c conda-forge scikit-image
 ```
 
 - NOTE: `opencv-python-headless` does not include GUI support
