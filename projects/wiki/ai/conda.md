@@ -3,9 +3,9 @@
 ## Basic Recipe to create a conda virtual environment
 
 ```console
-conda create -n <my-env> -c conda-forge python jupyerlab numpy matplotlib
-conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas scikit-learn
-conda create -n <my-env> -c conda-forge python jupyerlab matplotlib pandas tensorflow
+conda create -n <my-env> -c conda-forge python jupyterlab numpy matplotlib
+conda create -n <my-env> -c conda-forge python jupyterlab matplotlib pandas scikit-learn
+conda create -n <my-env> -c conda-forge python jupyterlab matplotlib pandas tensorflow
 conda create -n <my-env> -c conda-forge python pytest pytest-cov
 conda create -n <my-env> -c fastai python opencv-python-headless scikit-image
 conda create -n <my-env> -c conda-forge scikit-image
@@ -98,7 +98,7 @@ conda create --clone <venv-name> --name <new-venv>
 
 ```console
 conda env export --name ENVNAME > envname.yml
-conda env create --file envname.yml
+conda env create --file envname.yml --prune
 ```
 
 If a file named environment.yml is present in a directory you could create an environment by
