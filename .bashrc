@@ -76,6 +76,7 @@ bind "set completion-ignore-case on"
 
 
 ### ALIASES ###
+alias py='python'
 alias ping='ping -c4'
 alias kdek='nvim $HOME/projects/kde_shortcuts.md'
 alias vimk='nvim $HOME/projects/vim_shortcuts.md'
