@@ -353,10 +353,10 @@ __conda_setup="$('/home/alfredo/.config/miniconda3/bin/conda' 'shell.bash' 'hook
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/.config/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/.config/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/alfredo/.config/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/.config/miniconda3/bin:$PATH"
+        export PATH="/home/alfredo/.config/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
