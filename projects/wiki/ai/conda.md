@@ -97,6 +97,7 @@ conda create --clone <venv-name> --name <new-venv>
 ## Export and create an environment from a yaml file
 
 ```console
+conda list --explicit > <envname>-modules.txt
 conda env export --name ENVNAME > envname.yml
 conda env create --file envname.yml --prune
 ```
