@@ -99,7 +99,13 @@ conda create --clone <venv-name> --name <new-venv>
 ```console
 conda list --explicit > <envname>-modules.txt
 conda env export --name ENVNAME > envname.yml
-conda env create --file envname.yml --prune
+conda env create --file envname.yml
+```
+
+## To update your environment and dependencies
+
+```console
+conda env update --prefix ./env --file environment.yml  --prune
 ```
 
 If a file named environment.yml is present in a directory you could create an environment by
