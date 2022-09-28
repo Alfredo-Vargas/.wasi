@@ -18,6 +18,7 @@ conda create -n <my-env> -c conda-forge scikit-image
 - Nice `onedarkpro` theme can be found [here](https://github.com/johnnybarrels/jupyterlab_onedarkpro)
 ### fastai
 - `conda install -c fastai fastai jupyterlab fastbook sentencepiece`
+- conda install -c auto duckduckgo
 
 ## Plugins to Jupyterlab
 
