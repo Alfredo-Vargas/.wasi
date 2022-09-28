@@ -16,6 +16,8 @@ conda create -n <my-env> -c conda-forge scikit-image
 
 - `conda install -c conda-forge jupyterthemes` : seems that is not working.
 - Nice `onedarkpro` theme can be found [here](https://github.com/johnnybarrels/jupyterlab_onedarkpro)
+### fastai
+- `conda install -c fastai fastai jupyterlab fastbook sentencepiece`
 
 ## Plugins to Jupyterlab
 
