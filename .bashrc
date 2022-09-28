@@ -91,6 +91,7 @@ alias wiki='nvim $HOME/projects/wiki'
 alias basics='nvim $HOME/projects/basicsOf/'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
+alias rju='jupyter lab --no-browser --port 88888'
 # alias htb='$HOME/.wasi/projects/scripts/hextobin.sh'
 # alias btd='\$HOME/.wasi/projects/scripts/bintodec.sh'
 
