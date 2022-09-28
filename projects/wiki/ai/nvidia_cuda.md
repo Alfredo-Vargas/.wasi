@@ -23,6 +23,14 @@ nvcc -arch=sm_61 -o <output_path/filename> <input_path/file.cu> -run
 ## Check GPU usage
 ```console
 watch -n -1 nvidia-smi
+nvidia-smi -q -g 0 -d UTILIZATION -l
+```
+### Check GPU usage when using Pytorch
+```console
+import torch
+print(torch.cuda.device(0))
+print(torch.cuda.get_device_name(0))
+
 ```
 
 ## Cuda Configurations
