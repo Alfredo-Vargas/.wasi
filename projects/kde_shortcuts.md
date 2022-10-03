@@ -7,6 +7,7 @@
 - `Alt + F3` : show window menu
 ---
 ### Move
+- `Right click and show in activities` : to show window in a particular activity
 - `C #` : moves to desktop with number #
 - `Meta + #` : moves to the activity with number #
 - `Meta + Alt + arrow` : move focus from windows across single desktop
