@@ -35,6 +35,7 @@
 
 ### Plugins related
 
+- `ColorizerToggle` : to switch on and off the hex code colors
 - `siw<char>` : to surround inner word by the passed char
 - `<C-z>` : to go to zen mode
 
