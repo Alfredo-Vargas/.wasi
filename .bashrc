@@ -48,6 +48,11 @@ if [ -d "$HOME/projects/scripts" ] ;
   then PATH="$HOME/projects/scripts:$PATH"
 fi
 
+if [ -d "$HOME/dataspell-2022.2.2/bin/" ] ;
+  then PATH="$HOME/dataspell-2022.2.2/bin:$PATH"
+fi
+
+
 [ -z "$OS" ] && export OS=`uname`
 case "$OS" in
   Linux)  export PLATFORM=linux ;;
