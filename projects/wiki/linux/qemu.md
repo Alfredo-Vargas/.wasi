@@ -23,30 +23,30 @@ The contents of the `default.xml` are:
 </network>
 ```
 # Check if virtualization is enable and if virtualization threads are available (Virtual CPUS):
-  ```console
-  LC_ALL=C lscpu | grep Virtualization
-  egrep -c '(vmx|svm)' /proc/cpuinfo
-  ```
+```console
+LC_ALL=C lscpu | grep Virtualization
+egrep -c '(vmx|svm)' /proc/cpuinfo
+```
 # Install relevant packages
-  ```console
-  pacman -Sy --needed \
-  qemu \
-  dhclient \
-  openbsd-netcat \
-  virt-viewer \
-  libvirt \
-  dnsmasq \
-  dmidecode \
-  ebtables \
-  virt-install \
-  virt-manager \
-  bridge-utils
-  ```
+```console
+pacman -Sy --needed \
+qemu \
+dhclient \
+openbsd-netcat \
+virt-viewer \
+libvirt \
+dnsmasq \
+dmidecode \
+ebtables \
+virt-install \
+virt-manager \
+bridge-utils
+```
 
 # Enable `libvirtd` to have access to the required sockets
 ```
 console
-sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 ```
 
@@ -67,16 +67,16 @@ sudo usermod -G libvirt -a <username>
   ```
 
 # List all virtual machines
-  ```console
-  virsh list --all
-  ```
+```console
+virsh list --all
+```
 # Check if the system and session levels work properly
-  Change `~/config/libvirt/libvirt.conf`
-  ```console
-  sudo -c qemu:///system
-  sudo -c qemu:///session
-  ```
-  If you choose for session you will have access to the gnome boxes virtual machines
+Change `~/config/libvirt/libvirt.conf`
+```console
+sudo -c qemu:///system
+sudo -c qemu:///session
+```
+If you choose for session you will have access to the gnome boxes virtual machines
 
 # Location of images of libvirt
 ```console
