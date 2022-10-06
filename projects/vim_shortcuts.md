@@ -2,6 +2,7 @@
 
 ### Vim Commands
 
+- `:g/^$/d` : delete globally (applies in the current buffer) all blank lines
 - `:set paste` : to turn off `autoindent` when you paste code
 - `:set nopaste` : to turn off paste mode and allow `autoindent` work correctly
 - `di<char>` : delete all inside of that is surrounded by `<char>`
