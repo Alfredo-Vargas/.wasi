@@ -102,8 +102,9 @@ set smartcase
 set autochdir
 set cinoptions=l1
 
-colorscheme desert
+" colorscheme desert
 " set background=dark
+colorscheme codedark
 
 inoremap jk <ESC>
 let g:mapleader = "\<Space>"
@@ -127,6 +128,9 @@ inoremap <down> <NOP>
 inoremap <left> <NOP>
 inoremap <right> <NOP>
 
+call plug#begin()
+Plug 'tomasiser/vim-code-dark'
+call plug#end()
 
 " read personal/private vim configuration (keep last to override)
 " set rtp^=~/.vimpersonal
