@@ -3,7 +3,7 @@ set -o vi
 
 ###  EXPORT DEFAULTS  ###
 export EDITOR='vim'
-export IDE='nvim'
+export IDE='lvim'
 export VISUAL='vim'
 # export HISTCONTROL=ignoreboth:erasedups
 export HISTCONTROL=ignoreboth
@@ -83,8 +83,8 @@ bind "set completion-ignore-case on"
 ### ALIASES ###
 alias py='python'
 alias ping='ping -c4'
-alias kdek='nvim $HOME/projects/kde_shortcuts.md'
-alias vimk='nvim $HOME/projects/vim_shortcuts.md'
+alias kdek='lvim $HOME/projects/kde_shortcuts.md'
+alias vimk='lvim $HOME/projects/vim_shortcuts.md'
 alias cvim='cd ~/.config/slinks/nvim_config/'
 alias scripts='cd $HOME/.wasi/projects/scripts/'
 alias tm='cd ~/.config/slinks/thomas_more_dir/'
@@ -92,8 +92,8 @@ alias sm='cd ~/.config/slinks/summer_slink'
 alias alf='cd ~/.config/slinks/mega_alfredo/'
 alias tab='cd ~/.config/slinks/mega_tabitha/'
 alias fd='fd -H'
-alias wiki='nvim $HOME/projects/wiki'
-alias basics='nvim $HOME/projects/basicsOf/'
+alias wiki='lvim $HOME/projects/wiki'
+alias basics='lvim $HOME/projects/basicsOf/'
 alias byebye='sudo shutdown -h now'
 alias rere='sudo reboot -h now'
 alias rju='jupyter lab --no-browser --port'
@@ -354,7 +354,7 @@ ex ()
 #remove
 alias rmgitcache="rm -r ~/.cache/git"
 
-unset CONDA_SHLVL
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/alfredo/.config/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -369,3 +369,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+

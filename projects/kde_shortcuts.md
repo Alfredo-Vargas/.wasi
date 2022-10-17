@@ -1,3 +1,18 @@
+## Gnome Shortcuts
+
+### Tilix
+
+- `Shift + Ctrl + x` : to maximize current window
+- `Shift + Ctrl + f` : find
+
+### View
+
+- `Meta + PgUp` : cycle to the workspace to the left
+- `Meta + PgDn` : cycle to the workspace to the right
+- `Meta + Space` : Switch Keyboard Layout
+
+---
+
 ## KDE Plasma Shortcuts
 
 ### View
