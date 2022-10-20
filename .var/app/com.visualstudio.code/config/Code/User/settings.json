@@ -1,0 +1,77 @@
+{
+  // Appeareance
+  "workbench.colorTheme": "Default Dark+",
+
+  // Terminal
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.shellIntegration.enabled": true,
+
+  // VS Code automatically highlights selected words.
+  // "vim.hlsearch": false,
+  "vim.timeout": 200,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-f>": true,
+    "<C-a>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["v", "n"],
+      "after": ["v", "g", "_", "y"]
+    },
+    {
+      // find the source definition instead of the .d.ts file
+      // 'f'ind the source 'd'efinition
+      "before": ["f", "d"],
+      "commands": ["typescript.goToSourceDefinition"]
+    },
+    {
+      // df is easier to hit than gd
+      // go to the 'd'e'f'inition
+      "before": ["d", "f"],
+      "after": ["g", "d"]
+    },
+    {
+      "before": ["d", "n"],
+      "after": ["d", "g", "_"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    }
+  ],
+  // vim mode viwy viwcmd+d p issue hack
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    }
+  ],
+
+  // Language Specific Configurations
+
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "off"
+  },
+  "[python]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+  },
+}

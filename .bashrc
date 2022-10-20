@@ -185,6 +185,7 @@ esac
 export PATH="$PATH:$HOME/.cargo/bin"
 export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/go/bin"
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
 # export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 # Cross-shell propmt starship detection and configuration
 if starship -V starship &> /dev/null
@@ -279,13 +280,15 @@ btd() {
 # alias s="systemctl"
 # alias j='journalctl -xe'
 
+alias lg='gio list -a "standard::display-name"'
 # list
 if exa -v exa &> /dev/null
 then
-  alias ls="exa -l"
-  alias la='exa -la'
-  alias ll='exa -alFh'
-  alias l='exa'
+  alias ls="exa -l --icons"
+  alias la='exa -la --icons'
+  alias ll='exa -alFh --icons'
+  alias l='exa --icons'
+  # alias lg='exa -al --icons'
 else
   alias ls='ls --color=auto'
   alias la='ls -a --color=auto'
