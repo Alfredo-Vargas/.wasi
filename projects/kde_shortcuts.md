@@ -1,11 +1,35 @@
 ## Gnome Shortcuts
 
+### Pop Os
+
+- `Meta + /` : Launch Application
+    - Scroll through the Launcher with arrow keys
+    - `t:` : execute command in terminal
+    - `:` : execute command in sh
+    - `=` : calculate equation
+- `Meta + Arrow` : Change focus on windows
+- `Meta + Enter` : Enter adjustment mode
+    - Arrows to move window
+    - Shift + Arrow : to resize
+    - Ctrl + Arrow : Swap windows
+
+- `Meta + Shit + Up/Down` : Move current windows to Up/Down workspace
+- `Meta + Shit + Left/Right` : Move current windows to Left/Right monitor
+- `Meta + Ctrl + Shit + Up/Down` : Move current windows to Up/Down monitor
+- `Meta + O` : Change window orientation
+- `Meta + G` : Toggle floating mode
+- `Meta + Y` : Toggle auto-tiling
+- `Meta + S` : Toggle stacking mode
+- `Meta + M` : Toggle maximize
+- `Meta + Q` : Close window
+
+
 ### Tilix
 
 - `Shift + Ctrl + x` : to maximize current window
 - `Shift + Ctrl + f` : find
 
-### View
+#### View
 
 - `Meta + PgUp` : cycle to the workspace to the left
 - `Meta + PgDn` : cycle to the workspace to the right
