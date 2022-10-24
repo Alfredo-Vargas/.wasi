@@ -23,6 +23,10 @@
 - `Meta + M` : Toggle maximize
 - `Meta + Q` : Close window
 
+### Gnome
+
+- `~/.config/evolution/sources/` : source for Gnome Calendar
+
 
 ### Tilix
 

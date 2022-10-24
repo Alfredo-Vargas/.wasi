@@ -203,7 +203,7 @@ bind "set completion-ignore-case on"
 ### ALIASES ###
 alias py='python'
 alias ping='ping -c4'
-alias sysk='lvim $HOME/projects/kde_shortcuts.md'
+alias sysc='lvim $HOME/projects/sys_config_and_shortcuts.md'
 alias vimk='lvim $HOME/projects/vim_shortcuts.md'
 alias cvim='cd ~/.config/slinks/vim_config/'
 alias scripts='cd $HOME/.wasi/projects/scripts/'
