@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "darkplus"
 -- lvim.colorscheme = "tokyonight"
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -265,4 +265,5 @@ lvim.plugins = {
 --     -- let treesitter use bash highlight for zsh files as well
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
+
 -- })
