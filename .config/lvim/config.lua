@@ -1,4 +1,6 @@
 --[[
+-- NONO
+-- is it you moreno?
 lvim is the global options object
 
 Linters should be
